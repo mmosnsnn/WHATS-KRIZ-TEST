@@ -3,58 +3,48 @@ const got = require("got");
 const fs = require("fs");
 const { PluginDB, installPlugin } = require("../lib/database/plugins");
 
-
-
 command(
   {
-    pattern: "install",
+    pattern: "install ?(.*)",
     fromMe: true,
-    type: "user",
+    desc: "Installs External plugins",
+    type:'user'
   },
   async (message, match) => {
-    if (!match) return await message.sendMessage("Example:\n\nplugin url\n∴════∴\nplugin list");
-
-    try {
-      var url = new URL(match);
-    } catch (e) {
-      console.log(e);
-      return await message.sendMessage("_Ready_");
-    }
-
-    if (url.host === "gist.github.com") {
-      url.host = "gist.githubusercontent.com";
-      url = url.toString() + "/raw";
-    } else {
-      url = url.toString();
-    }
-    var plugin_name;
-    var { body, statusCode } = await got(url);
-    if (statusCode == 200) {
-      var comand = body.match(/(?<=pattern:) ["'](.*?)["']/);
-      plugin_name = comand[0].replace(/["']/g, "").trim().split(" ")[0];
-      if (!plugin_name) {
-        plugin_name = "__" + Math.random().toString(36).substring(8);
-      }
-      fs.writeFileSync(__dirname + "/" + plugin_name + ".js", body);
+    if (!match) return await message.sendMessage("_Send a plugin url_");
+    for (let Url of getUrl(match)) {
       try {
-        require("./" + plugin_name);
-      } catch (e) {
-        fs.unlinkSync(__dirname + "/" + plugin_name + ".js");
-        return await message.sendMessage("Invalid Plugin\n ```" + e + "```");
+        var url = new URL(Url);
+      } catch {
+        return await message.sendMessage("_Invalid Url_");
       }
 
-      await installPlugin(url, plugin_name);
+      if (url.host === 'gist.github.com') {
+        url.host = 'gist.githubusercontent.com';
+        url = url.toString() + '/raw'
+    } else {
+        url = url.toString()
+    }
 
-      await message.sendMessage(`_New plugin installed : ${plugin_name}_`);
+    var response = await got(url);
+    if (response.statusCode == 200) {
+        let plugin_name = /pattern: ["'](.*)["'],/g.exec(response.body)
+	plugin_name = plugin_name[1].split(' ')[0]
+        fs.writeFileSync("./plugins/" + plugin_name + ".js", response.body);
+        try {
+          require("./" + plugin_name);
+        } catch (e) {
+          fs.unlinkSync(__dirname+"/" + plugin_name + ".js");
+          return await message.sendMessage("Invalid Plugin\n ```" + e + "```");
+        }
+
+        await installPlugin(url, plugin_name);
+        await message.reply(`𝑛𝑒𝑤 𝑝𝑙𝑢𝑔𝑖𝑛 𝑎𝑑𝑑𝑒𝑑: ${plugin_name}`);
+
+      }
     }
   }
 );
-
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
 command(
   { pattern: "plugin", fromMe: true, desc: "plugin list" ,type:'user'},
@@ -76,12 +66,6 @@ command(
     }
   }
 );
-
-/* Copyright (C) 2022 X-Electra.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-X-Asena - X-Electra
-*/
 
 command(
   {
