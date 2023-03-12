@@ -18,7 +18,7 @@ let { performance } = require('perf_hooks')
 case `${p}`+'runtime': {
 const { runtime } = require('./lib/myfunc.js')
 const rntime = `ʀᴜɴᴛɪᴍᴇ : ${runtime(process.uptime())}`
-    await x.sendMessage(m.chat, { text : runtime }, {quoted : false})
+    await x.sendMessage(m.chat, { text : rntime }, {quoted : false})
 }
 break
 }
