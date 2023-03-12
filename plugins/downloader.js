@@ -3,16 +3,7 @@ const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
 const yts = require('yt-search')
 
 
-if (budy.startsWith("https://www.instagram.com")) {
-	insta(budy).then(({ url }) => {
- 
-   try { x.sendMessage(m.chat , { video : { url : url } } )
-       } catch {
-	       console.log("umm")
-    // x.sendMessage("ᴇʀʀᴏʀ ᴏᴄᴄᴜʀᴇᴅ!!"); }
-    }
-    })
-}
+
 
 
 (async () => {
@@ -72,6 +63,19 @@ case `${p}`+'play': {
             }
             break
 }
+
+//autodl
+if (budy.startsWith("https://www.instagram.com")) {
+	insta(budy).then(({ url }) => {
+ 
+   try { x.sendMessage(m.chat , { video : { url : url } } )
+       } catch {
+	       console.log("umm")
+     x.sendMessage("ᴇʀʀᴏʀ !!"); }
+    }
+    })
+}
+
     } catch (e) {
 m.reply("err " + e)
    }
