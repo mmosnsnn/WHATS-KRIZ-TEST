@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "pm2 start . --attach --name WHATS-KRIZ-AI"
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "supervisor -s index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +19,7 @@
     "chalk": "^4.1.2",
     "fs": "^0.0.1-security",
     "acrcloud": "^1.4.0",
-       "chalk": "^4.1.2",
+    "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.10",
     "child_process": "^1.0.2",
     "raganork-bot": "^3.0.1",
@@ -29,33 +28,27 @@
     "tod-api": "^1.0.5",
     "file-type": "^16.5.3",
     "lolcatjs": "^2.4.1",
-    "fluent-ffmpeg": "^2.1.2",
-   
+    "fluent-ffmpeg": "^2.1.2",   
     "fs-extra": "^10.0.0",
     "got": "^11.8.3",
     "emoji-api": "^1.0.2",
     "g-i-s": "^2.1.6",
     "google-it": "^1.6.2",
     "human-readable": "^0.2.1",
-    "hxz-api": "^1.0.1",
-    
+    "hxz-api": "^1.0.1", 
     "jsdom": "^16.4.0",
     "heroku-client": "^3.1.0",
     "lowdb": "^2.1.0",
-    "mongoose": "^6.2.1",
-   
+    "mongoose": "^6.2.1",  
     "ms": "^2.1.3",
     "mumaker": "^1.0.0",
-    "node-cron": "^3.0.0",
-   
+    "node-cron": "^3.0.0",  
     "node-webpmux": "^3.1.0",
     "os": "^0.1.2",
     "path": "^0.12.7",
     "pastebin-js": "^1.0.6",
-    "perf_hooks": "0.0.1",
-   
-    "pm2": "^5.2.0",
-   
+    "perf_hooks": "0.0.1",  
+    "pm2": "^5.2.0",   
     "request": "^2.88.2",
     "remove.bg": "^1.3.0",
     "sequelize": "^6.23.0",
