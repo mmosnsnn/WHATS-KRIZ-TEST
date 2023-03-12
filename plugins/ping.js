@@ -20,6 +20,9 @@ let { performance } = require('perf_hooks')
    }
 })()
 
+(async () => {
+ 
+  try{
 switch (command) {
 case `${p}`+'runtime': {
 const { runtime } = require('../lib')
