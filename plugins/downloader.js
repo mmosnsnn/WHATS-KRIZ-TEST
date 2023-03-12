@@ -1,11 +1,3 @@
-const { insta } = require('./lib/scrapers.js')
-const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
-const yts = require('yt-search')
-
-
-
-
-
 (async () => {
  
   try{
