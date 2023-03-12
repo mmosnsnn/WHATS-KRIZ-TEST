@@ -5,7 +5,9 @@ const chalk = require('chalk')
 const moment = require('moment-timezone')
 const prefa = ['',',','!','.','🐦',',','*']
 global.owner = ['919207759062']
-
+const { insta } = require('./lib/scrapers.js')
+const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
+const yts = require('yt-search')
 
 module.exports = viper = async (x, m) => {
 try {
