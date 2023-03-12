@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TOXIC-KICHUX/Ai-test-.git"
+    "url": "git+https://github.com/Djjdkdm/WHATS-KRIZ-TEST.git"
   },
   "keywords": [
     "whatsapp",
@@ -28,9 +28,9 @@
   "developer": "X-Electra / V1P3R-X",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/TOXIC-KICHUX/Ai-test-/issues"
+    "url": "https://github.com/Djjdkdm/WHATS-KRIZ-TEST/issues"
   },
-  "homepage": "https://github.com/TOXIC-KICHUX/Ai-test-#readme",
+  "homepage": "https://github.com/Djjdkdm/WHATS-KRIZ-TEST#readme",
   "dependencies": {
     "@adiwajshing/baileys": "^5.0.0",
     "@adiwajshing/keyed-db": "latest",
