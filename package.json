@@ -74,6 +74,7 @@
     "scrape-primbon": "latest",
     "util": "latest",
     "xfarr-api": "latest",
+    "pastebin-js": "^1.0.6",
     "yargs": "latest",
     "ytdl-core": "latest",
     "yt-search": "latest"
