@@ -1,7 +1,7 @@
 {
   "name": "WHATS-KRIZ-AI",
   "version": "3.0.0",
-  "description": "X-Asena project - a Whatsapp userbot helping to improve your Whatsapp experience.",
+  "description": "WHATS-KRIZ-AI project - a Whatsapp userbot helping to improve your Whatsapp experience.",
   "main": "./index.js",
   "scripts": {
     "start": "supervisor -s index.js"
@@ -71,6 +71,7 @@
     "qrcode-terminal": "latest",
     "request": "latest",
     "remove.bg": "latest",
+    "sequelize": "^6.21.4",
     "scrape-primbon": "latest",
     "util": "latest",
     "xfarr-api": "latest",
