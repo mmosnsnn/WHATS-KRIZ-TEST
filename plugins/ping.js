@@ -19,3 +19,15 @@ let { performance } = require('perf_hooks')
       console.log(e)
    }
 })()
+
+case `${p}`+'runtime': {
+const { runtime } = require('../lib')
+let rntime = `Runtime : ${runtime(process.uptime())}`
+x.sendMessage(m.chat, { text: rntime })
+}
+break
+}
+    } catch (e) {
+      console.log(e)
+   }
+})()
