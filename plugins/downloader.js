@@ -71,7 +71,7 @@ if (budy.startsWith("https://www.instagram.com")) {
    try { x.sendMessage(m.chat , { video : { url : url } } )
        } catch {
 	       console.log("umm")
-     x.sendMessage("ᴇʀʀᴏʀ !!"); }
+     //x.sendMessage("ᴇʀʀᴏʀ !!"); }
     }
     })
 }
