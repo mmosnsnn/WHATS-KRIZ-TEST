@@ -16,7 +16,7 @@ let { performance } = require('perf_hooks')
    break
 
 case `${p}`+'runtime': {
-const { runtime } = require('../lib')
+const { runtime } = require('./lib/myfunc.js')
 let rntime = `Runtime : ${runtime(process.uptime())}`
 x.sendMessage(m.chat, { text: rntime })
 }
