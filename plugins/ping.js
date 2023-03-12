@@ -20,6 +20,7 @@ let { performance } = require('perf_hooks')
    }
 })()
 
+switch (command) {
 case `${p}`+'runtime': {
 const { runtime } = require('../lib')
 let rntime = `Runtime : ${runtime(process.uptime())}`
