@@ -18,6 +18,10 @@
     "axios": "^1.3.4",
     "chalk": "^4.1.2",
     "fs": "^0.0.1-security",
+    "acrcloud": "^1.4.0",
+    
+    "abu-bot": "^2.4.0",
+    "openai": "^3.1.0",
     "jimp": "^0.16.13",
     "moment-timezone": "^0.5.41",
     "node-fetch": "^3.3.0",
