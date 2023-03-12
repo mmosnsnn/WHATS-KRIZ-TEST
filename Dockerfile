@@ -1,13 +1,24 @@
-FROM fusuf/whatsasena:latest
+FROM node:lts-buster
 
-RUN git clone https://github.com/TOXIC-KICHUX/Ai-test-  /Kriz/WHATSKRIZ
+RUN apt-get update && \
+  apt-get install -y \
+  ffmpeg \
+  imagemagick \
+  neofetch -y \
+  webp && \
+  apt-get upgrade -y && \
+  rm -rf /var/lib/apt/lists/*
 
-WORKDIR /Kriz/WHATSKRIZ
-
-ENV TZ=Asia/Kolkata
+COPY package.json .
 
 RUN npm install
 
-RUN npm install supervisor -g
-RUN yarn install --ignore-engines
-CMD ["node", "index.js"]
+COPY . .
+
+EXPOSE 5000
+
+RUN npm install pm2 -g
+
+CMD pm2 start index.js && \
+pm2 save & \
+pm2 logs
