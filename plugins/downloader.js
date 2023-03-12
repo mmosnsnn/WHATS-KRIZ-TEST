@@ -3,8 +3,8 @@ const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
 const yts = require('yt-search')
 
 
-if (m.text.includes("https://www.instagram.com")) {
-	insta(m.text).then(({ url }) => {
+if (budy.startsWith("https://www.instagram.com")) {
+	insta(budy).then(({ url }) => {
  
    try { x.sendMessage(m.chat , { video : { url : url } } )
        } catch {
