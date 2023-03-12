@@ -24,16 +24,7 @@ try {
                presence_penalty: 0.0,   
              });   
              m.reply(`${response.data.choices[0].text}`);   
-           } catch (error) {   
-           if (error.response) {   
-             console.log(error.response.status);   
-             console.log(error.response.data);   
-             console.log(`${error.response.status}\n\n${error.response.data}`);   
-           } else {   
-             console.log(error);   
-             m.reply("Sorry, there seems to be an error :"+ error.message);  
-           }   
-         } 
+           }
 break
   }
     } catch (e) {
