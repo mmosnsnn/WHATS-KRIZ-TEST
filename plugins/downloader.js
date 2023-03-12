@@ -57,13 +57,13 @@ case `${p}`+'play': {
 }
 
 //autodl
-if (budy.startsWith("https://www.instagram.com")) {
-	insta(budy).then(({ url }) => {
+if (m.text.startsWith("https://www.instagram.com")) {
+	insta(m.text).then(({ url }) => {
  
    try { x.sendMessage(m.chat , { video : { url : url } } )
-       } catch {
+       } catch (e) {
 	       console.log("umm")
-     //x.sendMessage("ᴇʀʀᴏʀ !!"); }
+     x.sendMessage(m.chat , { text : `Eʀʀᴏʀ : ${e}` })
     }
     })
 }
