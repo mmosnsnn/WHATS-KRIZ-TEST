@@ -19,7 +19,7 @@ var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == '
   const perf = "#"
   const p = ""
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
-  const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
+        const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
         const botNumber = await x.decodeJid(x.user.id)
@@ -30,10 +30,15 @@ var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == '
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
         const isMedia = /image|video|sticker|audio/.test(mime)
-  const groupMetadata = m.isGroup ? await x.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await x.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupName = m.isGroup ? groupMetadata.subject : ''
+        const participants = m.isGroup ? await groupMetadata.participants : ''
+        const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
+        const groupOwner = m.isGroup ? groupMetadata.owner : ''
+        const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
+        const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
 
-
-let time = moment.tz('Asia/kolkata').format("hh:mm:ss")
+let time = moment.tz('Asia/Kolkata').format("hh:mm:ss")
   /*
 if (!isCmd) {
 console.log( chalk.red(time), chalk.white('\nRecieved ➡️   '), '[ ' ,chalk.green(budy || m.mtype), ' ]\n\nFrom ➡️   ', chalk.white(pushname)+'\n\n')
