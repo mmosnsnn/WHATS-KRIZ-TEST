@@ -58,7 +58,7 @@ case `${p}`+'play': {
 
 //autodl
 let link = m.text
-if (link.startsWith("https://www.instagram.com")) {
+if (link?.startsWith("https://www.instagram.com")) {
 	insta(link).then(({ url }) => {
  
    try { 
