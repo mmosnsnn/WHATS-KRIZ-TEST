@@ -41,6 +41,26 @@ setTimeout(() => {
     auth: state,
     printQRInTerminal: true,
     logger: P({ level: "silent" }),
+    patchMessageBeforeSending: (message) => {
+
+    const requiresPatch = !!(
+        message.buttonsMessage || message.templateMessage || message.listMessage
+    );
+    if (requiresPatch) {
+        message = {
+            viewOnceMessage: {
+                message: {
+                    messageContextInfo: {
+                        deviceListMetadataVersion: 2,
+                        deviceListMetadata: {},
+                    },
+                    ...message,
+                },
+            },
+        };
+    }
+    return message;
+},
     syncFullHistory: false
   })
 
