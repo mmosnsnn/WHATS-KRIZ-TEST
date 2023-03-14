@@ -10,7 +10,7 @@ let { performance } = require('perf_hooks')
               let neww = performance.now()
     let speed = neww - old
    var y = Math.ceil(speed)
-     await m.reply('_Rᴇꜱᴘᴏɴꜱᴇ ɪɴ' + (y) + 'ᴍꜱ_')
+     await m.reply('_Rᴇꜱᴘᴏɴꜱᴇ ɪɴ ' + (y) + ' ᴍꜱ_')
             
        }
    break
