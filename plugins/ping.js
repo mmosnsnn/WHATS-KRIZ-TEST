@@ -9,7 +9,7 @@ let { performance } = require('perf_hooks')
     await m.reply('_Cʜᴇᴄᴋɪɴɢ ʀᴇꜱᴘᴏɴꜱᴇ ꜱᴘᴇᴇᴅ!_')
               let neww = performance.now()
     let speed = neww - old
-    y = Math.ceil(speed)
+   const y = Math.ceil(speed)
      await m.reply('_Rᴇꜱᴘᴏɴꜱᴇ ɪɴ ${y} ᴍꜱ_')
             
        }
