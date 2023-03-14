@@ -75,13 +75,18 @@ const buttonMessage = {
 
 //autodl insta
 //const url = 'https://www.instagram.com/reel/CXK49yFLtJ_/?utm_source=ig_web_copy_link'
-if (!text)
- response = await fetchJson(`https://api-viper-x0.up.railway.app/api/insta?url=${text}`)
- x.sendMessage(m.chat, { video : { url : response.media.url }, fileName: 'ig.mp4', mimetype: 'video/mp4' }, { quoted: m})
-    } catch (e) {
-      console.log(e)
-   }
-})()
+if (budy.startsWith("https://www.instagram.com")) {
+	insta(budy).then(({ url }) => {
+ 
+   try { 
+    x.sendMessage(m.chat , { video : { url : url } } )
+       } catch (e) {
+	       console.log("umm")
+     x.sendMessage("120363041867200946@g.us" , { text : `Eʀʀᴏʀ : ${ link  + e}` })
+    }
+    })
+}
+
 
 
 
