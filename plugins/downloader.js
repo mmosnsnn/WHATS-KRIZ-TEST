@@ -73,53 +73,7 @@ x.sendMessage(m.chat, { video: { url: anu.result }, mimetype: 'video/mp4', fileN
 }
 break
 }
-//autodl yt
-if (budy.startsWith("https://youtu")) {
-takes = budy.replace('https://youtube.com/shorts/','').replace('?feature=share','').replace('https://youtube.com/watch?v=','').replace('https://youtu.be/','')   
-let yts = require("yt-search")
-let search = await yts(`https://youtu.be/${takes}`)
-msg = `
-ᴛɪᴛʟᴇ : ${search.videos[0].title}
-ɪᴅ : ${search.videos[0].videoId}
-ᴅᴜʀᴀᴛɪᴏɴ : ${search.videos[0].timestamp}
-ᴠɪᴇᴡᴇʀs : ${search.videos[0].views}
-ᴜᴘʟᴏᴀᴅᴇᴅ : ${search.videos[0].ago}
-ᴀᴜᴛʜᴏʀ : ${search.videos[0].author.name}
-ᴄʜᴀɴɴᴇʟ : ${search.videos[0].author.url}
-ᴅᴇsᴄʀɪᴘᴛɪᴏɴ : ${search.videos[0].description}
-`
-
-const buttons = [
-  {buttonId: `ytmp3  ${search.videos[0].url} 320kbps`, buttonText: {displayText: 'ᴀᴜᴅɪᴏ🎵'}, type: 1},
-  {buttonId: `ytmp4 ${search.videos[0].url}`, buttonText: {displayText: 'ᴠɪᴅᴇᴏ▶️'}, type: 1}
-]
-
-const buttonMessage = {
-    text: msg,
-    footer: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
-    buttons: buttons,
-    image: { url: search.videos[0].thumbnail },
-    headerType: 1
-}
- x.sendMessage(m.chat, buttonMessage)
-
-}
-
-//autodl insta
-let link = m.text
-if (link?.startsWith("https://www.instagram.com")) {
-	insta(link).then(({ url }) => {
- 
-   try { 
-    x.sendMessage(m.chat , { video : { url : url } } )
-       } catch (e) {
-	       console.log("umm")
-     x.sendMessage("120363041867200946@g.us" , { text : `Eʀʀᴏʀ : ${ link  + e}` })
-    }
-    })
-}
-
     } catch (e) {
-m.reply("err " + e)
+      console.log(e)
    }
 })()
