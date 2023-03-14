@@ -6,11 +6,11 @@
 
 let { performance } = require('perf_hooks')
     let old = performance.now()
-    await x.sendMessage(m.chat, { text : '_Checking ping..._' }, {quoted : false})
+    await m.reply('_Cʜᴇᴄᴋɪɴɢ ʀᴇꜱᴘᴏɴꜱᴇ ꜱᴘᴇᴇᴅ!_')
               let neww = performance.now()
     let speed = neww - old
     y = Math.ceil(speed)
-        x.sendMessage(m.chat, { text : `_${y} ms_` }, {quoted : false})
+     await m.reply('_Rᴇꜱᴘᴏɴꜱᴇ ɪɴ ${y} ᴍꜱ_')
             
        }
    break
