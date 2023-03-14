@@ -1,13 +1,14 @@
 const { DisconnectReason, useMultiFileAuthState, makeInMemoryStore, jidDecode , BufferJSON, default: makeWASocket } = require('@adiwajshing/baileys');
 const { Boom } = require("@hapi/boom");
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-console.log("starting...");
+console.log("Starting...📶");
 const P = require("pino")
 const PhoneNumber = require('awesome-phonenumber')
 const { MakeSession } = require("./lib/session");
 const fetch = require("node-fetch");
 const fs = require("fs");
 const {smsg} = require("./lib/function")
+const config = require('./config.js')
 const store = makeInMemoryStore({});
 const {multiauthState} = require("./lib/multiauth");
 
@@ -15,7 +16,7 @@ const {multiauthState} = require("./lib/multiauth");
 /*async function Singmulti() {
   
   if (!fs.existsSync(__dirname + "/session.json"))
-    await MakeSession("REZBNV_XASENA_V_XASENA_yTTg=", __dirname + "/session.json").then(async() => { 
+    await MakeSession("config.SESSION_ID", __dirname + "/session.json").then(async() => { 
      const { state } = useMultiFileAuthState(__dirname + "/auth_info_baileys");
       await sleep(40000)
   await multiauthState("session.json", __dirname + "/auth_info_baileys", state);
@@ -25,7 +26,7 @@ Singmulti()*/
 
 async function Singmulti() {
   if (!fs.existsSync(__dirname + "/session.json"))
-    await MakeSession("UDd1cHV_XASENA_lcnU=", __dirname + "/session.json");
+    await MakeSession("config.SESSION_ID", __dirname + "/session.json");
   const { state } = await useMultiFileAuthState(__dirname + "/session");
   await multiauthState("session.json", __dirname + "/session", state);
 }
@@ -75,35 +76,36 @@ setTimeout(() => {
       console.log("ℹ️ Connecting to WhatsApp... Please Wait.");
     }
 if (connection == "open") {
-  console.log("Connected ✓")
+  console.log("Connected to WhatsApp Web✅")
+  console.log("WHATS-KRIZ-AI Is Now Online..✅")
   }
 
     if (connection === 'close') {
       let reason = new Boom(lastDisconnect.error).output.statusCode;
       if (reason === DisconnectReason.badSession) {
-        console.log(`ᴜʜ ᴏʜ ꜱᴇꜱꜱɪᴏɴ ᴇʀʀᴏʀ ᴘʟᴇᴀꜱᴇ ʀᴇꜱᴄᴀɴ ᴀɴᴅ ᴛʀʏ`)
+        console.log(`Uhh Session Error Please Rescan And Try Again...⚠️`)
         x.logout()
       } else if (reason === DisconnectReason.connectionClosed) {
-        console.log("ʀᴇᴄᴏɴɴᴇᴄᴛɪɴɢ ...")
+        console.log("Reconnecting...🔁")
         connectToWhatsApp()
       } else if (reason === DisconnectReason.connectionLost) {
-        console.log("ᴄᴏɴɴᴇᴄᴛɪᴏɴ ʟᴏꜱᴛ  ʀᴇᴛʀʏɪɴɢ...")
+        console.log("Connection Is Lost  Retrying...🔁")
         connectToWhatsApp()
       } else if (reason === DisconnectReason.connectionReplaced) {
-        console.log("ᴄᴏɴɴᴇᴄᴛɪᴏɴ ʀᴇᴘʟᴀᴄᴇᴅ")
+        console.log("Connection Is Replaced...❗")
         x.logout()
       } else if (reason === DisconnectReason.loggedOut) {
-        console.log(`ᴄᴏɴɴᴇᴄᴛɪᴏɴ ʟᴏꜱᴛ ᴅᴇᴠɪᴄᴇ ʟᴏɢɢᴇᴅ ᴏᴜᴛ`)
+        console.log(`Connection Is Lost Device Logged Out...🔚`)
         x.logout()
       } else if (reason === DisconnectReason.restartRequired) {
-        console.log("ʀᴇꜱᴛᴀʀᴛ ʀᴇQᴜɪʀᴇᴅ")
-        console.log("ʀᴇꜱᴛᴀʀᴛɪɴɢ ...")
+        console.log("Restart Required...❗")
+        console.log("Restarting...🔁")
         connectToWhatsApp()
       } else if (reason === DisconnectReason.timedOut) {
-        console.log("ᴄᴏɴɴᴇᴄᴛɪᴏɴ ᴛɪᴍᴇᴅᴏᴜᴛ ʀᴇᴛʀʏɪɴɢ ...")
+        console.log("Connection Timeout Retrying...🔁")
         connectToWhatsApp()
       } else {
-        x.end(`ᴄᴏɴɴᴇᴄᴛɪᴏɴ ꜱᴛᴏᴘᴘᴇᴅ : ${reason}|${lastDisconnect.error}`)
+        x.end(`Connection stopped🛑 : ${reason}|${lastDisconnect.error}`)
       }
     }
   })
@@ -159,7 +161,7 @@ if (connection == "open") {
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await x.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await x.getName(i + '@s.whatsapp.net')}\nFN:${await x.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET: nothing@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI\nitem3.X-ABLabel:Repository\nitem4.ADR:;;India;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await x.getName(i + '@s.whatsapp.net')}\nFN:${await x.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Mobile\nitem2.EMAIL;type=INTERNET: whatskrizaiofficial@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI\nitem3.X-ABLabel:Repository\nitem4.ADR:;;India;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
 	x.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
