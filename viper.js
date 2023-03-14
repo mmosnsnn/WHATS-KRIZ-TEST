@@ -4,6 +4,7 @@ const util = require('util')
 const chalk = require('chalk')
 const moment = require('moment-timezone')
 const prefa = ['','!','.','#','&']
+global.prefix = ['','!','.','#','&']
 global.owner = ['919207759062']
 const { insta } = require('./lib/scrapers.js')
 const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
@@ -14,7 +15,7 @@ module.exports = viper = async (x, m) => {
 try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = typeof m.text == "string" ? m.text : "";
-        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~?@$%^©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@$%^&©^]/gi)[0] : "" : prefa ?? ''
+        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
         //var perf = '.'
         const isCmd = body.startsWith(prefix)
         const perf = "#"
