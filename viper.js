@@ -22,6 +22,7 @@ try {
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
+        let text = (q = args.join(" "))
         const pushname = m.pushName || "No Name"
         const botNumber = await x.decodeJid(x.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
@@ -72,9 +73,9 @@ const buttonMessage = {
 }
 
 //autodl insta
-let link = m.text
-if (link?.startsWith("https://www.instagram.com")) {
-	insta(link).then(({ url }) => {
+//const url = 'https://www.instagram.com/reel/CXK49yFLtJ_/?utm_source=ig_web_copy_link'
+if (m.text.includes("https://www.instagram.com")) {
+	insta(m.text).then(({ url }) => {
  
    try { 
     x.sendMessage(m.chat , { video : { url : url } } )
