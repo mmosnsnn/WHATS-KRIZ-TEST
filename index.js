@@ -120,8 +120,6 @@ if (connection == "open") {
     
   })
 
-
-
   x.decodeJid = (jid) => {
         if (!jid) return jid
         if (/:\d+@/gi.test(jid)) {
@@ -154,6 +152,18 @@ if (connection == "open") {
             (store.contacts[id] || {})
             return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
     }
+
+    x.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+	let list = []
+	for (let i of kon) {
+	    list.push({
+	    	displayName: await tio.getName(i + '@s.whatsapp.net'),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await x.getName(i + '@s.whatsapp.net')}\nFN:${await x.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET: nothing@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI\nitem3.X-ABLabel:Repository\nitem4.ADR:;;India;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    })
+	}
+	x.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
+    }
+
   //x.ev.on('creds.update', saveCreds)
 x.sendText = (jid, text, quoted = '', options) => x.sendMessage(jid, { text: text, ...options }, { quoted, ...options })
 
