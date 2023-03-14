@@ -35,7 +35,7 @@
     "@adiwajshing/baileys": "^5.0.0",
     "@adiwajshing/keyed-db": "latest",
     "@bochilteam/scraper": "latest",
-    "awesome-phonenumber": "latest",
+    "awesome-phonenumber": "^2.64.0",
     "axios": "latest",
     "chalk": "^4.1.1",
     "cheerio": "latest",
