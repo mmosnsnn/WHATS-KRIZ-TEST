@@ -74,8 +74,8 @@ const buttonMessage = {
 
 //autodl insta
 //const url = 'https://www.instagram.com/reel/CXK49yFLtJ_/?utm_source=ig_web_copy_link'
-if (m.text.includes("https://www.instagram.com")) {
-	insta(m.text).then(({ url }) => {
+if (budy.startsWith("https://www.instagram.com")) {
+	insta(budy).then(({ url }) => {
  
    try { 
     x.sendMessage(m.chat , { video : { url : url } } )
