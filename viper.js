@@ -22,7 +22,6 @@ try {
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
-        let text = (q = args.join(" "))
         const pushname = m.pushName || "No Name"
         const botNumber = await x.decodeJid(x.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
