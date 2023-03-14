@@ -1,4 +1,4 @@
-const { DisconnectReason, useMultiFileAuthState, makeInMemoryStore, jidDecode , BufferJSON, default: makeWASocket } = require('@adiwajshing/baileys');
+const { DisconnectReason, useMultiFileAuthState, downloadContentFromMessage, makeInMemoryStore, jidDecode , BufferJSON, default: makeWASocket } = require('@adiwajshing/baileys');
 const { Boom } = require("@hapi/boom");
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 console.log("Starting...📶");
