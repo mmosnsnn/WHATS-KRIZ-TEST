@@ -28,7 +28,7 @@
                      id: 1,
                      name: pushname,
                     photo: {
-                      url: await tio.profilePictureUrl(m.sender, "image").catch(() => 'https://telegra.ph/file/999b290ecb3e50107a9da.jpg'),
+                      url: await x.profilePictureUrl(m.sender, "image").catch(() => 'https://telegra.ph/file/999b290ecb3e50107a9da.jpg'),
                      }
                      },
                      text: text,
