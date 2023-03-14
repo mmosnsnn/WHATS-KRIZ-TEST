@@ -8,6 +8,7 @@ global.prefix = ['','!','.','#','&']
 global.owner = ['919207759062']
 const { insta } = require('./lib/scrapers.js')
 const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
+const { toAudio } = require('./lib/converter.js')
 const yts = require('yt-search')
 const { parsedJid } = require('./lib/myfunc.js')
 
