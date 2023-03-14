@@ -157,7 +157,7 @@ if (connection == "open") {
 	let list = []
 	for (let i of kon) {
 	    list.push({
-	    	displayName: await tio.getName(i + '@s.whatsapp.net'),
+	    	displayName: await x.getName(i + '@s.whatsapp.net'),
 	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await x.getName(i + '@s.whatsapp.net')}\nFN:${await x.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET: nothing@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI\nitem3.X-ABLabel:Repository\nitem4.ADR:;;India;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
