@@ -75,7 +75,7 @@ break
 case `${p}`+'insta': {
 if (!text) await m.reply('_Need insta url!_')
 const response = await fetchJson(`https://api-viper-x0.up.railway.app/api/insta?url=${text}`)
-x.sendMessage(m.chat, { video: { url: response.result.url }, fileName: 'ig.mp4', mimetype: 'video/mp4' }, { quoted: m })
+x.sendMessage(m.chat, { video: { url: response.media.url }, fileName: 'ig.mp4', mimetype: 'video/mp4' }, { quoted: m })
 }
 break
 }
