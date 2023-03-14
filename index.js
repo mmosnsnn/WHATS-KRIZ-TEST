@@ -3,6 +3,7 @@ const { Boom } = require("@hapi/boom");
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 console.log("starting...");
 const P = require("pino")
+const PhoneNumber = require('awesome-phonenumber')
 const { MakeSession } = require("./lib/session");
 const fetch = require("node-fetch");
 const fs = require("fs");
