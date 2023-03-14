@@ -4,9 +4,10 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 console.log("Starting...📶");
 const P = require("pino")
 const PhoneNumber = require('awesome-phonenumber')
-const { MakeSession } = require("./lib/session");
-const fetch = require("node-fetch");
+const { MakeSession } = require("./lib/session")
+const fetch = require("node-fetch")
 const fs = require("fs");
+const axios = require('axios')
 const {smsg} = require("./lib/function")
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif.js')
 const config = require('./config.js')
