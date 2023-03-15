@@ -1,5 +1,6 @@
 const path = require('path')
 const axios = require('axios')
+const config = require('./config.js')
 const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
