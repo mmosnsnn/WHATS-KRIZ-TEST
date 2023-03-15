@@ -76,22 +76,6 @@ const buttonMessage = {
 
 }
 
-//autodl insta
-//const url = 'https://www.instagram.com/reel/CXK49yFLtJ_/?utm_source=ig_web_copy_link'
-if (!text)
-  const instadl = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url={text}`)
- 
-   try { 
-    x.sendMessage(m.chat , { video : { url : instadl.media.url } } )
-       } catch (e) {
-	       console.log("umm")
-     x.sendMessage("120363041867200946@g.us" , { text : `Eʀʀᴏʀ : ${ link  + e}` })
-    }
-    })
-}
-
-
-
 
 let time = moment.tz('Asia/Kolkata').format("hh:mm:ss")
   /*
