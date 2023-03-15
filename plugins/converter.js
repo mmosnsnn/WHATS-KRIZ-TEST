@@ -13,7 +13,7 @@
             break
    case 'qc': {
                      if (!text) return m.reply(`_Example : .qc whatskriz_`)
-                     let jsonnya = {
+                     let json = {
                      type: "quoted",
                      format: "webp",
                      backgroundColor: apiColor,
@@ -37,12 +37,12 @@
                    ],
                  }
                  const post = await axios.post("https://bot.lyo.su/quote/generate",
-                  jsonnya,{
+                  json,{
                     headers: { "Content-Type": "application/json"},
                   })
                   let buff = await Buffer.from(post.data.result.image, "base64")
                   if (buff == undefined) return reply('error')
-                  x.sendImageAsSticker(m.chat, buff, mek, { packname: 'ᴡʜᴀᴛs-ᴋʀɪᴢ-ᴀɪ', author: 'ᴛᴇᴀᴍ-ᴛᴏxɪᴄ' })
+                  x.sendImageAsSticker(m.chat, buff, ms, { packname: 'ᴡʜᴀᴛs-ᴋʀɪᴢ-ᴀɪ', author: 'ᴛᴇᴀᴍ-ᴛᴏxɪᴄ' })
 						
                   /**x.sendMessage(m.chat, {
 				image: buff,
