@@ -79,7 +79,7 @@ const buttonMessage = {
 //autodl insta
 //const url = 'https://www.instagram.com/reel/CXK49yFLtJ_/?utm_source=ig_web_copy_link'
 if (!text)
-   let instadl = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url={text}`)
+  const instadl = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url={text}`)
  
    try { 
     x.sendMessage(m.chat , { video : { url : instadl.media.url } } )
