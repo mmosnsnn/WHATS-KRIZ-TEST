@@ -6,6 +6,7 @@ const P = require("pino")
 const PhoneNumber = require('awesome-phonenumber')
 const { MakeSession } = require("./lib/session")
 const fetch = require("node-fetch")
+const path = require('path')
 const fs = require("fs");
 const axios = require('axios')
 const {smsg} = require("./lib/function")
