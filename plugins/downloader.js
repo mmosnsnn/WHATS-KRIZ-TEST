@@ -59,8 +59,7 @@ if (!text) await m.reply(`_Sᴇɴᴅ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ ʟɪɴ�
 let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 if (!isLinks2) return m.reply(`_Iɴᴠᴀʟɪᴅ ʟɪɴᴋ!_`)
 anu = await ytMp4(`${q}`)
-let tle = ${anu.title}
-m.reply('_' + (tle) + ' is downloading...!_')
+m.reply('_${anu.title} is downloading...!_')
 x.sendMessage(m.chat, { audio: { url: anu.result }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, { quoted: m })
 }
 break
