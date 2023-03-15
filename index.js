@@ -178,7 +178,7 @@ if (connection == "open") {
             buffer = await imageToWebp(buff)
         }
 
-        await tio.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        await x.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
         return buffer
     }
 
