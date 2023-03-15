@@ -64,7 +64,7 @@ case `${p}`+'sticker': {
                 let encmedia = await x.sendVideoAsSticker(m.chat, media, m, { packname: config.PACKNAME, author: config.AUTHOR })
                 await fs.unlinkSync(encmedia)
             } else {
-                throw `_Reply to photo or video!_`
+                await m.reply('_Reply to photo or video!_')
                 }
             }
             break
