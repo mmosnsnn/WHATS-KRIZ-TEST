@@ -22,7 +22,6 @@
             let gjidmsg = `ᴀʟʟ ɢʀᴏᴜᴘꜱ ᴊɪᴅ\n\n`
             for (let i of anu) {
                 let metadata = await x.groupMetadata(i);
-                await sleep(500)
                 gjidmsg += `ꜱᴜʙᴊᴇᴄᴛ:- ${metadata.subject}\n`
                 gjidmsg += `ᴍᴇᴍʙᴇʀ:- ${metadata.participants.length}\n`
                 gjidmsg += `ᴊɪᴅ:- ${i}\n\n`
