@@ -7,12 +7,12 @@ const chalk = require('chalk')
 const moment = require('moment-timezone')
 const prefa = ['','!','.','#','&','/',',','!','?']
 global.prefix = ['','!','.','#','&','/',',','!','?']
-global.owner = ['919207759062','919961857267','919633687665']
+global.owner = ['919207759062','919961857267','919633687665','919496966726']
 const { insta } = require('./lib/scrapers.js')
 const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
 const { toAudio } = require('./lib/converter.js')
 const yts = require('yt-search')
-const { parsedJid, fetchJson } = require('./lib/myfunc.js')
+const { parsedJid, fetchJson, sleep } = require('./lib/myfunc.js')
 
 module.exports = viper = async (x, m, chatUpdate) => {
 try {
