@@ -56,7 +56,7 @@ case `${p}`+'sticker': {
             if (!quoted) m.reply('_Reply to photo or video!_')
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
-                let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname: config.PACKNAME, author: config.AUTHOR })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return m.reply('_Maximum 10 second video!_')
