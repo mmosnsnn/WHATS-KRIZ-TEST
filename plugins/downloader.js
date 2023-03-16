@@ -60,7 +60,7 @@ let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|b
 if (!isLinks2) return m.reply(`_Iɴᴠᴀʟɪᴅ ʟɪɴᴋ!_`)
 anu = await ytMp4(`${q}`)
 let kunna = await yts(text)
-let endi = search.videos[Math.floor(Math.random() * search.videos.length)]
+let endi = kunna.videos[Math.floor(Math.random() * search.videos.length)]
 m.reply(`_${anu.title} song is downloading...!_`)
 x.sendMessage(m.chat, { audio: { url: anu.result }, mimetype: 'audio/mpeg',
     contextInfo:{
