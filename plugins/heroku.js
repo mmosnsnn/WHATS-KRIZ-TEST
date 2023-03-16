@@ -1,3 +1,11 @@
+const Heroku = require("heroku-client")
+const got = require("got")
+const simpleGit = require("simple-git")
+const git = simpleGit()
+const heroku = new Heroku({ token: config.HEROKU_API_KEY });
+const baseURI = "/apps/" + config.HEROKU_APP_NAME;
+const exec = require("child_process").exec;
+
 (async () => {
  
   try{
