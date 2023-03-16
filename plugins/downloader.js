@@ -59,16 +59,17 @@ if (!text) await m.reply(`_Sᴇɴᴅ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ ʟɪɴ�
 let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 if (!isLinks2) return m.reply(`_Iɴᴠᴀʟɪᴅ ʟɪɴᴋ!_`)
 anu = await ytMp4(`${q}`)
+let logo = await jslbuffer(anu.thumbnail)
 m.reply(`_${anu.title} song is downloading...!_`)
 x.sendMessage(m.chat, { audio: { url: anu.result }, mimetype: 'audio/mpeg',
     contextInfo:{
         externalAdReply:{
-            title: pushname,
-            body: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
-            thumbnail: await fetchBuffer(anu.thumbnail),
+            title: ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ,
+            body: pushname,
+            thumbnail: logo,
             mediaType:2,
-            mediaUrl: anu.url,
-            sourceUrl: anu.url,
+            mediaUrl: anu.result,
+            sourceUrl: anu.result,
         }
 
     },
