@@ -59,7 +59,7 @@ if (!text) await m.reply(`_Sᴇɴᴅ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ ʟɪɴ�
 let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 if (!isLinks2) return m.reply(`_Iɴᴠᴀʟɪᴅ ʟɪɴᴋ!_`)
 anu = await ytMp4(`${q}`)
-m.reply('_${anu.title} is downloading...!_')
+m.reply(`_${anu.title} is downloading...!_`)
 x.sendMessage(m.chat, { audio: { url: anu.result }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, { quoted: m })
 }
 break
@@ -73,7 +73,7 @@ x.sendMessage(m.chat, { video: { url: anu.result }, mimetype: 'video/mp4', fileN
 }
 break
 case `${p}`+'insta': {
-if (!text) await m.reply('_Need insta url!_')
+if (!text) && (!m.quoted.m) await m.reply('_Need insta url!_')
 let response = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url=${text}`)
 x.sendMessage(m.chat, { video: { url: response.media.url }, fileName: 'ig.mp4', mimetype: 'video/mp4' }, { quoted: m })
 }
