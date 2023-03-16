@@ -63,7 +63,7 @@ m.reply(`_${anu.title} song is downloading...!_`)
 x.sendMessage(m.chat, { audio: { url: anu.result }, mimetype: 'audio/mpeg',
     contextInfo:{
         externalAdReply:{
-            title: ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ,
+            title: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
             body: pushname,
             thumbnail: await fetchBuffer(anu.thumbnail),
             mediaType:2,
