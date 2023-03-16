@@ -1,6 +1,5 @@
 const path = require('path')
 const axios = require('axios')
-const got = require("got")
 const config = require('./config.js')
 const fs = require('fs')
 const util = require('util')
