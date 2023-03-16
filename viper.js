@@ -1,8 +1,15 @@
 const path = require('path')
 const axios = require('axios')
+const Heroku = require("heroku-client")
+const got = require("got")
 const config = require('./config.js')
+const heroku = new Heroku({ token: Config.HEROKU_API_KEY });
+const baseURI = "/apps/" + config.HEROKU_APP_NAME;
 const fs = require('fs')
 const util = require('util')
+const simpleGit = require("simple-git")
+const git = simpleGit();
+const exec = require("child_process").exec;
 const chalk = require('chalk')
 const moment = require('moment-timezone')
 const prefa = ['','!','.','#','&','/',',','!','?']
