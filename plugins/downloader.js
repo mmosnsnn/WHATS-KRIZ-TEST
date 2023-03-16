@@ -65,7 +65,7 @@ x.sendMessage(m.chat, { audio: { url: anu.result }, mimetype: 'audio/mpeg',
         externalAdReply:{
             title: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
             body: pushname,
-            thumbnail: await fetchBuffer(anu.thumbnail),
+            thumbnail: await fetchBuffer(anu.thumb.url),
             mediaType:2,
             mediaUrl: anu.result,
             sourceUrl: anu.result,
