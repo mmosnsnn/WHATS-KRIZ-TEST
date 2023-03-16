@@ -42,7 +42,7 @@
                   })
                   let buff = await Buffer.from(post.data.result.image, "base64")
                   if (buff == undefined) return reply('error')
-                  x.sendImageAsSticker(m.chat, buff, m, { packname: 'ᴡʜᴀᴛs-ᴋʀɪᴢ-ᴀɪ', author: 'ᴛᴇᴀᴍ-ᴛᴏxɪᴄ' })
+                  x.sendImageAsSticker(m.chat, buff, m, { packname: config.PACKNAME, author: config.AUTHOR })
 						
                   /**x.sendMessage(m.chat, {
 				image: buff,
