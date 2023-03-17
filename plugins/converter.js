@@ -70,14 +70,14 @@ case `${p}`+'sticker': {
             break
 case `${p}`+'take': {
 	if (!text && !quoted) await m.reply(`_Reply to sticker!_`)
-	let buff = await x.downloadMediaMessage(qmsg)
+	let buff = await x.downloadMediaMessage()
 	let [packname, author] = match.split(",")
 	if (/image/.test(mime)) {
 	let encmedia = await x.sendImageAsSticker(m.chat, buff, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
 	await fs.unlinkSync(encmedia)
                 } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return m.reply('Maximum 10 seconds!')
-                let buff = await x.downloadMediaMessage(qmsg)
+                let buff = await x.downloadMediaMessage()
                 let encmedia = await kriz.sendVideoAsSticker(m.chat, buff, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
 	await fs.unlinkSync(encmedia)
 	}
