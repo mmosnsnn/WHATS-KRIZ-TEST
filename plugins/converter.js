@@ -72,13 +72,13 @@ case `${p}`+'take': {
 	if (!text) await m.reply(`_Reply to sticker!_`)
 	let [packname, author] = text.split(",")
     if (/image/.test(mime)) {
-    let media = await x.downloadMediaMessage(qmsg)
+    let media = await quoted.download()
 	let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
 	await fs.unlinkSync(encmedia)
                 } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return m.reply('Maximum 10 seconds!')
-                let buff = await x.downloadMediaMessage(qmsg)
-                let encmedia = await kriz.sendVideoAsSticker(m.chat, buff, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
+                let buff = await quoted.download()
+                let encmedia = await x.sendVideoAsSticker(m.chat, buff, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
 	await fs.unlinkSync(encmedia)
 	}
 	}
