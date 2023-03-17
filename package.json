@@ -4,7 +4,7 @@
   "description": "A simple whatsapp bot - from viper-x0 api key this WhatsApp userbot improvs your WhatsApp using experience.",
   "main": "./index.js",
   "scripts": {
-    "start": "supervisor -s index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
