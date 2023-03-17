@@ -70,7 +70,7 @@ case `${p}`+'sticker': {
             break
 case `${p}`+'take': {
 	if (!text) await m.reply(`_Reply to sticker!_`)
-	let [packname, author] = match.split(",")
+	let [packname, author] = text.split(",")
     if (/image/.test(mime)) {
     let media = await x.downloadMediaMessage(qmsg)
 	let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
