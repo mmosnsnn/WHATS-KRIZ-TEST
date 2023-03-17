@@ -69,20 +69,34 @@ case `${p}`+'sticker': {
             }
             break
 case `${p}`+'take': {
-	if (!text && !quoted) await m.reply(`_Reply to sticker!_`)
-	let buff = await x.downloadMediaMessage()
+	if (!text) await m.reply(`_Reply to sticker!_`)
 	let [packname, author] = match.split(",")
-	if (/image/.test(mime)) {
-	let encmedia = await x.sendImageAsSticker(m.chat, buff, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
+    if (/image/.test(mime)) {
+    let media = await x.downloadMediaMessage(qmsg)
+	let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
 	await fs.unlinkSync(encmedia)
                 } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return m.reply('Maximum 10 seconds!')
-                let buff = await x.downloadMediaMessage()
+                let buff = await x.downloadMediaMessage(qmsg)
                 let encmedia = await kriz.sendVideoAsSticker(m.chat, buff, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
 	await fs.unlinkSync(encmedia)
 	}
 	}
 	break
+case `${p}`+'photo': {
+                if (!quoted) await m.reply(`_Reply to image sticker!_`)
+                if (!/webp/.test(mime)) await m.reply(`_Reply to image sticker!_`)
+                let media = await x.downloadAndSaveMediaMessage(quoted)
+                let ran = await getRandom('.png')
+                exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+                    fs.unlinkSync(media)
+                    if (err) throw err
+                    let buffer = fs.readFileSync(ran)
+                    x.sendMessage(m.chat, { image: buffer }, { quoted: m })
+                    fs.unlinkSync(ran)
+                })
+            }
+            break
 }
     } catch (e) {
       console.log(e)
