@@ -55,12 +55,10 @@ case `${p}`+'play': {
             }
             break
 case `${p}`+'ytmp3': {
-if (!text) await m.reply(`_Sᴇɴᴅ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ ʟɪɴᴋ...!_`)
+if (!text) await m.reply(`_Send youtube video link!_`)
 let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
-if (!isLinks2) return m.reply(`_Iɴᴠᴀʟɪᴅ ʟɪɴᴋ!_`)
+if (!isLinks2) return m.reply(`_Invalid link!_`)
 anu = await ytMp4(`${q}`)
-let kunna = await yts(text)
-let endi = kunna.videos[Math.floor(Math.random() * kunna.videos.length)]
 m.reply(`_${anu.title} song is downloading...!_`)
 x.sendMessage(m.chat, { audio: { url: anu.result }, mimetype: 'audio/mpeg',
     contextInfo:{
@@ -79,12 +77,25 @@ x.sendMessage(m.chat, { audio: { url: anu.result }, mimetype: 'audio/mpeg',
 }
 break
 case `${p}`+'ytmp4': {
-if (!text) await m.reply(`_Sᴇɴᴅ ʏᴏᴜᴛᴜʙᴇ ᴠɪᴅᴇᴏ ʟɪɴᴋ...!_`)
+if (!text) await m.reply(`_Send youtube video link!_`)
 let isLinks= args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
-if (!isLinks) return m.reply(`_Iɴᴠᴀʟɪᴅ ʟɪɴᴋ!_`)
-m.reply('_Yᴏᴜʀ ᴠɪᴅᴇᴏ ɪꜱ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...!_')
+if (!isLinks) return m.reply(`_Invalid link!_`)
 anu = await ytMp4(`${q}`)
-x.sendMessage(m.chat, { video: { url: anu.result }, mimetype: 'video/mp4', fileName: `${anu.title}.mp4` }, { quoted: m })
+m.reply(`_${anu.title} video is downloading..._`)
+x.sendMessage(m.chat, { video: { url: anu.result }, mimetype: 'video/mp4',
+    contextInfo:{
+        externalAdReply:{
+            title: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
+            body: pushname,
+            thumbnail: await fetchBuffer(anu.thumb),
+            mediaType:2,
+            mediaUrl: text,
+            sourceUrl: text,
+            showAdAttribution: true
+        }
+
+    },
+},{quoted:m})
 }
 break
 case `${p}`+'insta': {
