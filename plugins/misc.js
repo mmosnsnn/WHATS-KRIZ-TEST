@@ -33,7 +33,13 @@
     
     
     break
-     
+     case `${p}`+'mf': {
+      let media = await m.quoted.download()
+      let buffer = media
+      if (!text) throw false
+      x.sendMessage(text, { video: buffer, contextInfo: { externalAdReply: { title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,renderLargerThumbnail: true, showAdAttribution: true,  body: `ɪ ᴜsᴇᴅ ᴛᴏ ᴛʜɪɴᴋ ᴛʜᴀᴛ ᴛʜᴇ ᴡᴏʀsᴛ ᴛʜɪɴɢ ɪɴ ʟɪғᴇ ᴡᴀs ᴛᴏ ᴇɴᴅ ᴜᴘ ᴀʟʟ ᴀʟᴏɴᴇ. ɪᴛ’s ɴᴏᴛ. ᴛʜᴇ ᴡᴏʀsᴛ ᴛʜɪɴɢ ɪɴ ʟɪғᴇ ɪs ᴇɴᴅɪɴɢ ᴜᴘ ᴡɪᴛʜ ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴍᴀᴋᴇ ʏᴏᴜ ғᴇᴇʟ ᴀʟʟ ᴀʟᴏɴᴇ!.`, mediaUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`, mediaType: 2, thumbnail: 'https://i.imgur.com/PLGSRuH.jpeg' }}})
+    }
+break
   }
     } catch (e) {
 m.reply("err " + e)
