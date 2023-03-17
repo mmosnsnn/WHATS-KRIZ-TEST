@@ -77,9 +77,9 @@ const buttonMessage = {
 }
 
 //autodl Instagram
-if (!text)
+//if (!text)
 //const instadl = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url={text}`)
-x.sendMessage(m.chat, { video : { url : instadl.media.url }}, { quoted : m })
+//x.sendMessage(m.chat, { video : { url : instadl.media.url }}, { quoted : m })
 
 let time = moment.tz('Asia/Kolkata').format("hh:mm:ss")
   /*
