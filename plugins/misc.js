@@ -33,12 +33,32 @@
     
     
     break
-     case `${p}`+'mf': {
+          case `${p}`+'mf': {
       if (!isCreator) await m.reply(`_This command only owner can use!._`)
       let media = await m.quoted.download()
       let buffer = media
-      if (!text) await m.reply(`_Example : mf jid note:only one jid can use!_`)
-      x.sendMessage(text, { audio: buffer, mimetype:'audio/mpeg', ptt:true , contextInfo: { externalAdReply: { title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,renderLargerThumbnail: true, showAdAttribution: true,  body: `ɪ ᴜsᴇᴅ ᴛᴏ ᴛʜɪɴᴋ ᴛʜᴀᴛ ᴛʜᴇ ᴡᴏʀsᴛ ᴛʜɪɴɢ ɪɴ ʟɪғᴇ ᴡᴀs ᴛᴏ ᴇɴᴅ ᴜᴘ ᴀʟʟ ᴀʟᴏɴᴇ. ɪᴛ's ɴᴏᴛ. ᴛʜᴇ ᴡᴏʀsᴛ ᴛʜɪɴɢ ɪɴ ʟɪғᴇ ɪs ᴇɴᴅɪɴɢ ᴜᴘ ᴡɪᴛʜ ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴍᴀᴋᴇ ʏᴏᴜ ғᴇᴇʟ ᴀʟʟ ᴀʟᴏɴᴇ!.`, mediaUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`, mediaType: 2, thumbnail: fs.readFileSync('./src/kichu.jpg') }}})
+      if (!teks) await m.reply(`_Example : mf jid note:only one jid can use!_`)
+      const options = {}
+      options.contextInfo = {
+	  forwardingScore: 5, // change it to 999 for many times forwarded
+	  isForwarded: false,
+	  }
+	 options.linkPreview = {
+		title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,
+		body: `ɪ ᴅᴏɴ'ᴛ ᴄᴀʀᴇ ᴀɴʏᴏɴᴇ!🥶`,
+		mediaType: 2,
+		thumbnail: `https://i.imgur.com/PLGSRuH.jpeg`,
+		mediaUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`, 
+		sourceUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`,
+		showAdAttribution: true
+	  }
+	options.filesize = 99999999999;
+	if (/audio/.test(mime)) {
+		options.duration = 7280542
+		options.ptt = true
+	}
+	options.audiowave = [0,10,20,30,40,50,60,70,80,90,99,90,80,70,60,50,40,30,20,10,0]
+      x.sendMessage(teks, { audio: buffer, options })
     }
 break
   }
