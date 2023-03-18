@@ -11,7 +11,7 @@
             x.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', fileName: `ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ.mp3`}, { quoted: m})                 
             }
             break
-   case 'qc': {
+        case `${p}`+'qc': {
                      if (!teks) return m.reply(`_Reply to a text_\nOr\n_Example : ${p}qc whatskriz_`)
                      let json = {
                      type: "quoted",
@@ -52,7 +52,7 @@
 			})**/
 	}
 			break
-case `${p}`+'sticker': {
+           case `${p}`+'sticker': {
             if (!quoted) m.reply('_Reply to photo or video!_')
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
@@ -68,7 +68,7 @@ case `${p}`+'sticker': {
                 }
             }
             break
-case `${p}`+'take': {
+        case `${p}`+'take': {
 	if (!m.quoted) await m.reply(`_Reply to sticker!_`)
 	let [packname, author] = text.split(",")
     if (/image/.test(mime)) {
@@ -83,7 +83,7 @@ case `${p}`+'take': {
 	}
 	}
 	break
-case `${p}`+'photo': {
+       case `${p}`+'photo': {
                 if (!quoted) await m.reply(`_Reply to image sticker!_`)
                 if (!/webp/.test(mime)) await m.reply(`_Reply to image sticker!_`)
                 let media = await x.downloadAndSaveMediaMessage(quoted)
