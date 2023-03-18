@@ -37,7 +37,7 @@
       let media = await m.quoted.download()
       let buffer = media
       if (!text) throw false
-      x.sendMessage(text, { audio: buffer, contextInfo: { externalAdReply: { title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,renderLargerThumbnail: true, showAdAttribution: true,  body: `ɪ ᴜsᴇᴅ ᴛᴏ ᴛʜɪɴᴋ ᴛʜᴀᴛ ᴛʜᴇ ᴡᴏʀsᴛ ᴛʜɪɴɢ ɪɴ ʟɪғᴇ ᴡᴀs ᴛᴏ ᴇɴᴅ ᴜᴘ ᴀʟʟ ᴀʟᴏɴᴇ. ɪᴛ's ɴᴏᴛ. ᴛʜᴇ ᴡᴏʀsᴛ ᴛʜɪɴɢ ɪɴ ʟɪғᴇ ɪs ᴇɴᴅɪɴɢ ᴜᴘ ᴡɪᴛʜ ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴍᴀᴋᴇ ʏᴏᴜ ғᴇᴇʟ ᴀʟʟ ᴀʟᴏɴᴇ!.`, mediaUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`, mediaType: 2, thumbnail: fs.readFileSync('./src/kichu.jpg') }}})
+      x.sendMessage(text, { audio: buffer, mimetype:'audio/mpeg', ptt:true , contextInfo: { externalAdReply: { title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,renderLargerThumbnail: true, showAdAttribution: true,  body: `ɪ ᴜsᴇᴅ ᴛᴏ ᴛʜɪɴᴋ ᴛʜᴀᴛ ᴛʜᴇ ᴡᴏʀsᴛ ᴛʜɪɴɢ ɪɴ ʟɪғᴇ ᴡᴀs ᴛᴏ ᴇɴᴅ ᴜᴘ ᴀʟʟ ᴀʟᴏɴᴇ. ɪᴛ's ɴᴏᴛ. ᴛʜᴇ ᴡᴏʀsᴛ ᴛʜɪɴɢ ɪɴ ʟɪғᴇ ɪs ᴇɴᴅɪɴɢ ᴜᴘ ᴡɪᴛʜ ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴍᴀᴋᴇ ʏᴏᴜ ғᴇᴇʟ ᴀʟʟ ᴀʟᴏɴᴇ!.`, mediaUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`, mediaType: 2, thumbnail: fs.readFileSync('./src/kichu.jpg') }}})
     }
 break
   }
