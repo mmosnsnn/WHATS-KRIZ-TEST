@@ -108,7 +108,7 @@ contextInfo: {
                 }
 	
 		    } catch (e) {
-			    kriz.sendMessage(m.chat , { text : "(☞ ͡° ͜ʖ ͡°)☞     " + e } )
+			    x.sendMessage(m.chat , { text : "(☞ ͡° ͜ʖ ͡°)☞     " + e } )
 			    }
                 
 //autodl Instagram
