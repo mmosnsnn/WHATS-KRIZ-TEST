@@ -76,6 +76,7 @@
     "sequelize": "^6.21.4",
     "scrape-primbon": "latest",
     "simple-git": "^3.14.1",
+    "sqlite3": "^5.1.6",
     "util": "latest",
     "xfarr-api": "latest",
     "pastebin-js": "^1.0.6",
