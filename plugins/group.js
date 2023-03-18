@@ -53,7 +53,7 @@ case `${p}`+'tag': {
 if (!teks) await m.reply(`_Example : .tag hello_\n_Or_\n_Reply to a text .tag!_`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isAdmins) await m.reply(`_This command only can use group admins and bot owners!_`)
-x.sendMessage(m.chat, { text : teks '' , mentions: participants.map(a => a.id)}, { quoted: m })
+x.sendMessage(m.chat, { text : teks, mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break
 }
