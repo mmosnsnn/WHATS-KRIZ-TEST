@@ -39,12 +39,8 @@
       let media = await m.quoted.download()
       let buffer = media
 
-  
-		 ptt = true
-      filesize = [99999999999]
     let  waveform = [0,10,20,30,40,50,60,70,80,90,99,90,80,70,60,50,40,30,20,10,0]
-      x.sendMessage(text, {   audio: buffer,
-filesize,  waveform , duration: '2000001355',                                       
+      x.sendMessage(text, {   audio: buffer,mimetype: 'audio/mpeg',ptt: true, waveform,                                       
                             
 contextInfo: { externalAdReply: { title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,renderLargerThumbnail: false, showAdAttribution: true,  body: `ɪ ᴅᴏɴᴛ ᴄᴀʀᴇ ᴀɴʏᴏɴᴇ!🥶`, mediaUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`, mediaType: 2, thumbnail:  fs.readFileSync('./src/kriz.jpg') }}})
     }
