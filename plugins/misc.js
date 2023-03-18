@@ -45,35 +45,7 @@
 contextInfo: { externalAdReply: { title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,renderLargerThumbnail: false, showAdAttribution: true,  body: `ɪ ᴅᴏɴᴛ ᴄᴀʀᴇ ᴀɴʏᴏɴᴇ!🥶`, mediaUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`, mediaType: 2, thumbnail:  fs.readFileSync('./src/kriz.jpg') }}})
     }
 break
-case `${p}`+'mention': {
-var audios = ["https://i.imgur.com/NTSnK6q.mp4" ,"https://i.imgur.com/GRlWXJh.mp4"]
-var logo = 'https://i.imgur.com/LgwJjMF.jpeg'
-if (teks.includes(owner[any])) {
-const audio = audios[Math.floor(Math.random() * audios.length)]
-const Audio = await getBuffer(audio)
-let image1 = await getBuffer(logo)
-let image2 = await getBuffer(logo)
-var res = await toAudio(Audio, 'mp4')
-x.sendMessage(m.chat, {
-audio: res,
-mimetype: 'audio/mpeg',
-ptt: true,
-waveform: [99,50,99,50,99],
-contextInfo: {
-				externalAdReply: {
-				title: 'WʜᴀᴛꜱKʀɪᴢ Aɪ',
-				body: 'ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!',
-				mediaType: 2,
-				thumbnail: image2,
-				mediaUrl: 'https://www.instagram.com/t.o.x.i.c_k.i.c.h.u',
-				sourceUrl: 'https://www.instagram.com/t.o.x.i.c_k.i.c.h.u',
-				showAdAttribution: true
-                }}
-                },
-                { quoted: m})
-                }
-                }
-                break
+
   }
     } catch (e) {
 m.reply("err " + e)
