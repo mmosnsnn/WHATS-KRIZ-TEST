@@ -32,7 +32,7 @@
                       url: await x.profilePictureUrl(m.sender, "image").catch(() => 'https://telegra.ph/file/999b290ecb3e50107a9da.jpg'),
                      }
                      },
-                     text: quoted,
+                     text: text,
                      replyMessage: {},
                      },
                    ],
@@ -70,7 +70,7 @@ case `${p}`+'sticker': {
             }
             break
 case `${p}`+'take': {
-	if (!quoted) await m.reply(`_Reply to sticker!_`)
+	if (!m.quoted) await m.reply(`_Reply to sticker!_`)
 	let [packname, author] = text.split(",")
     if (/image/.test(mime)) {
     let media = await quoted.download()
