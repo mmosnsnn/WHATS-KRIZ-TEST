@@ -41,11 +41,12 @@ break
 case `${p}`+'tagall': {
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isAdmins) await m.reply(`_This command only can use group admins and bot owners!_`)
-let tmsg = `╭──────❮ᴛᴀɢᴀʟʟ❯───────✱`
+let tmsg = `╭─────❮ᴛᴀɢᴀʟʟ❯──────✱`;
+let count `│🪀✱:`;
 for (let mem of participants) {
-tmsg += `│🪀✱:@${mem.id.split('@')[0]}`
+tmsg += `${count} @${mem.id.split('@')[0]}\n`;
 }
-tmsg += `╰───────────────────✱`
+tmsg += `╰─────────────────✱`;
 x.sendMessage(m.chat, { text : tmsg, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break
