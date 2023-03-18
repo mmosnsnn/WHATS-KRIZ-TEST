@@ -99,8 +99,8 @@ x.sendMessage(m.chat, { video: { url: anu.result }, mimetype: 'video/mp4',
 }
 break
 case `${p}`+'insta': {
-if (!text) await m.reply('_Need insta url!_')
-let response = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url=${text}`)
+if (!link) await m.reply('_Need insta url!_')
+let response = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url=${link}`)
 x.sendMessage(m.chat, { video: { url: response.media.url }, fileName: 'ig.mp4', mimetype: 'video/mp4' }, { quoted: m })
 }
 break
