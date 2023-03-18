@@ -46,7 +46,7 @@ let count = `│🪀✱:`
 for (let mem of participants) {
 tmsg += `\n${count} @${mem.id.split('@')[0]}\n│`
 }
-tmsg += `╰─────────────────✱`
+tmsg += `\n╰─────────────────✱`
 x.sendMessage(m.chat, { text : tmsg, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break
