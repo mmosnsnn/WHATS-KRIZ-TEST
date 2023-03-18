@@ -3,30 +3,41 @@
   try{
 	switch (command) {
 		case `${p}`+'song': {
-		if (!text) await m.reply('_${p} ꜱᴏɴɢ xxxᴛᴇɴᴀᴄᴛɪᴏɴ ʜᴏᴘᴇ_')
-                let search = await yts(text)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                let buttons = [
-                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: 'ᴀᴜᴅɪᴏ🎵'}, type: 1},
-                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: 'ᴠɪᴅᴇᴏ▶️'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: anu.thumbnail },
-                    caption: `
-ᴛɪᴛʟᴇ : ${anu.title}
-ᴅᴜʀᴀᴛɪᴏɴ : ${anu.timestamp}
-ᴠɪᴇᴡᴇʀꜱ : ${anu.views}
-ᴜᴘʟᴏᴀᴅ ᴀᴛ : ${anu.ago}
-ᴀᴜᴛʜᴏʀ : ${anu.author.name}
-ᴄʜᴀɴɴᴇʟ : ${anu.author.url}
-ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ : ${anu.description}
-ᴠɪᴅᴇᴏ ᴜʀʟ : ${anu.url}`,
-                    footer: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
-                    buttons: buttons,
-                    headerType: 4
-                }
-                x.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
+      if (!args[0])
+      return x.sendMessage(
+        m.chat,
+        { text: `_Please provide a song name!_` },
+        { quoted: m }
+      );
+    let search = await yts(text);
+    let num = 1;
+    let sections = [];
+    for (let i of search.all) {
+      const list = {
+        title: `Rᴇsᴜʟᴛ: ${num++}`,
+        rows: [
+          {
+            title: `${i.title}`,
+            rowId: `ytmp3 ${i.url}`,
+            description: `Dᴜʀᴀᴛɪᴏɴ: ${i.timestamp}`,
+          },
+        ],
+      };
+      sections.push(list);
+    }
+    var txt = `Hᴇʏ👀 ${pushname}\nYᴏᴜᴛᴜʙᴇ Sᴇᴀʀᴄʜ🔍\n\n🧩Sᴇᴀʀᴄʜ Tᴇʀᴍ : ${args.join(
+      " "
+    )}\n\n📌 Tᴏᴛᴀʟ Rᴇsᴜʟᴛs : ${search.all.length}\n`;
+
+    let buttonMessage = {
+      text: txt,
+      footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
+      buttonText: "Sᴇʟᴇᴄᴛ ᴀ Sᴏɴɢ:)",
+      sections,
+    };
+
+  x.sendMessage(m.chat, buttonMessage, { quoted: m });
+  }
             break
 case `${p}`+'play': {
 		if (!text) await m.reply('_sᴏɴɢ xxxᴛᴇɴᴀᴄᴛɪᴏɴ ʜᴏᴘᴇ_')
