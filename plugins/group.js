@@ -4,6 +4,7 @@
 	switch (command) {
 case `${p}`+'add': {
 if (!teks) await m.reply(`_Give a number to add!_`)
+if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
 let users = m.quoted ? m.quoted.sender : teks.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
@@ -13,6 +14,7 @@ await m.reply(`@${users.split('@')[0]} added to this group!`)
 break
 case `${p}`+'kick': {
 if (!teks) await m.reply(`_Give a user to kick!_`)
+if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : teks.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
@@ -22,6 +24,7 @@ await m.reply(`@${users.split('@')[0]} kicked out from this group!`)
 break
 case `${p}`+'promote': {
 if (!teks) await m.reply(`_Give a user to promote!_`)
+if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : teks.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
@@ -31,6 +34,7 @@ await m.reply(`@${users.split('@')[0]} promoted as admin!`)
 break
 case `${p}`+'demote': {
 if (!teks) await m.reply(`_Give a user to demote!_`)
+if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : teks.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
@@ -40,7 +44,7 @@ m.reply(`@${users.split('@')[0]} demoted as member!`)
 break
 case `${p}`+'tagall': {
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
-if (!isAdmins) await m.reply(`_This command only can use group admins and bot owners!_`)
+if (!isAdmins && !isCreator) await m.reply(`_This command only can use group admins and bot owners!_`)
 let tmsg = `╭─────❮ᴛᴀɢᴀʟʟ❯──────✱`
 let count = `│🪀✱:`
 for (let mem of participants) {
@@ -53,7 +57,7 @@ break
 case `${p}`+'tag': {
 if (!teks) await m.reply(`_Example : .tag hello_\n_Or_\n_Reply to a text .tag!_`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
-if (!isAdmins) await m.reply(`_This command only can use group admins and bot owners!_`)
+if (!isCreator && !isAdmins) await m.reply(`_This command only can use group admins and bot owners!_`)
 x.sendMessage(m.chat, { text : teks, mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break
