@@ -82,6 +82,7 @@ const buttonMessage = {
 try {
 var audios = ["https://i.imgur.com/NTSnK6q.mp4" ,"https://i.imgur.com/GRlWXJh.mp4"]
 var logo = 'https://i.imgur.com/LgwJjMF.jpeg'
+for (any in owner)
 if (text.includes(owner[any])) {
 const audio = audios[Math.floor(Math.random() * audios.length)]
 const Audio = await getBuffer(audio)
