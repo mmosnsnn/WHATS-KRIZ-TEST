@@ -13,6 +13,7 @@
             break
    case 'qc': {
                      if (!text) return m.reply(`_Example : .qc whatskriz_`)
+                     if (!quoted) return m.reply(`_Reply to a text!_`)
                      let json = {
                      type: "quoted",
                      format: "webp",
@@ -31,7 +32,7 @@
                       url: await x.profilePictureUrl(m.sender, "image").catch(() => 'https://telegra.ph/file/999b290ecb3e50107a9da.jpg'),
                      }
                      },
-                     text: text,
+                     text: quoted,
                      replyMessage: {},
                      },
                    ],
@@ -69,7 +70,7 @@ case `${p}`+'sticker': {
             }
             break
 case `${p}`+'take': {
-	if (!text) await m.reply(`_Reply to sticker!_`)
+	if (!quoted) await m.reply(`_Reply to sticker!_`)
 	let [packname, author] = text.split(",")
     if (/image/.test(mime)) {
     let media = await quoted.download()
