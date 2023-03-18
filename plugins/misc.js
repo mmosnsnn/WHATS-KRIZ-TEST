@@ -72,6 +72,7 @@ contextInfo: {
                 },
                 { quoted: m})
                 }
+                }
                 break
   }
     } catch (e) {
