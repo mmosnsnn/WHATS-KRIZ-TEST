@@ -12,8 +12,7 @@
             }
             break
    case 'qc': {
-                     if (!text) return m.reply(`_Example : .qc whatskriz_`)
-                     if (!teks) return m.reply(`_Reply to a text!_`)
+                     if (!teks) return m.reply(`_Reply to a text_\nOr\n_Example : ${p}qc whatskriz_`)
                      let json = {
                      type: "quoted",
                      format: "webp",
