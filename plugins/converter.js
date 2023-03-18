@@ -77,7 +77,7 @@ case `${p}`+'take': {
 	let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
 	await fs.unlinkSync(encmedia)
                 } else if (/video/.test(mime)) {
-                if ((quoted.msg || quoted).seconds > 11) return m.reply('Maximum 10 seconds!')
+                if (!m.quoted) return m.reply('Maximum 10 seconds!')
                 let buff = await quoted.download()
                 let encmedia = await x.sendVideoAsSticker(m.chat, buff, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
 	await fs.unlinkSync(encmedia)
