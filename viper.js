@@ -14,6 +14,7 @@ const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
 const { toAudio } = require('./lib/converter.js')
 const yts = require('yt-search')
 const { parsedJid, fetchJson, sleep, fetchBuffer, getRandom, getBuffer } = require('./lib/myfunc.js')
+const owner = global.owner
 
 module.exports = viper = async (x, m, chatUpdate) => {
 try {
@@ -77,7 +78,39 @@ const buttonMessage = {
  x.sendMessage(m.chat, buttonMessage)
 
 }
-
+//Mention
+try {
+var audios = ["https://i.imgur.com/NTSnK6q.mp4" ,"https://i.imgur.com/GRlWXJh.mp4"]
+var logo = 'https://i.imgur.com/LgwJjMF.jpeg'
+if (text.includes(owner[any])) {
+const audio = audios[Math.floor(Math.random() * audios.length)]
+const Audio = await getBuffer(audio)
+let image1 = await getBuffer(logo)
+let image2 = await getBuffer(logo)
+var res = await toAudio(Audio, 'mp4')
+x.sendMessage(m.chat, {
+audio: res,
+mimetype: 'audio/mpeg',
+ptt: true,
+waveform: [99,50,99,50,99],
+contextInfo: {
+				externalAdReply: {
+				title: 'WʜᴀᴛꜱKʀɪᴢ Aɪ',
+				body: 'ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!',
+				mediaType: 2,
+				thumbnail: image2,
+				mediaUrl: 'https://www.instagram.com/t.o.x.i.c_k.i.c.h.u',
+				sourceUrl: 'https://www.instagram.com/t.o.x.i.c_k.i.c.h.u',
+				showAdAttribution: true
+                }}
+                },
+                { quoted: m})
+                }
+	
+		    } catch (e) {
+			    kriz.sendMessage(m.chat , { text : "(☞ ͡° ͜ʖ ͡°)☞     " + e } )
+			    }
+                
 //autodl Instagram
 //if (!text)
 //const instadl = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url={text}`)
