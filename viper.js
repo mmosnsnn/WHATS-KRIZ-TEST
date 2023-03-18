@@ -34,6 +34,7 @@ try {
         const text = q = args.join(" ")
         const teks = text ? text : m.quoted && m.quoted.text
         const quoted = m.quoted ? m.quoted : m
+        const link = text ? text : m.quoted && m.quoted.text
         const mime = (quoted.msg || quoted).mimetype || ''
         const isMedia = /image|video|sticker|audio/.test(mime)
         const groupMetadata = m.isGroup ? await x.groupMetadata(m.chat).catch(e => {}) : ''
