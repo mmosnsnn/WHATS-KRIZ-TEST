@@ -38,9 +38,7 @@
       let media = await m.quoted.download()
       let buffer = media
       if (!teks) await m.reply(`_Example : mf jid note:only one jid can use!_`)
-      x.sendMessage(teks, { audio: buffer, 
-      mimetype: 'audio/mpeg',
-			ptt: true,
+      x.sendMessage(teks, { audio: buffer,
 			waveform: [0,10,20,30,40,50,60,70,80,90,99,90,80,70,60,50,40,30,20,10,0],
 			contextInfo: {
 				externalAdReply: {
