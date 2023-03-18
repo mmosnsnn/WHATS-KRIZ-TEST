@@ -42,12 +42,10 @@ case `${p}`+'tagall': {
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isAdmins) await m.reply(`_This command only can use group admins and bot owners!_`)
 let tmsg = `╭──────❮ᴛᴀɢᴀʟʟ❯───────✱`
-tmsg += `│`
 for (let mem of participants) {
 tmsg += `│🪀✱:@${mem.id.split('@')[0]}`
 }
-tmsg += `│`
-tmsg += `╰───────────────────✱`
+tmsg += `│\n╰───────────────────✱`
 x.sendMessage(m.chat, { text : tmsg, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break
