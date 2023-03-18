@@ -33,17 +33,13 @@
     
     
     break
-          case `${p}`+'mf': {
+               case `${p}`+'mf': {
       if (!isCreator) await m.reply(`_This command only owner can use!._`)
       let media = await m.quoted.download()
       let buffer = media
       if (!teks) await m.reply(`_Example : mf jid note:only one jid can use!_`)
       const options = {}
       options.contextInfo = {
-	  forwardingScore: 5, // change it to 999 for many times forwarded
-	  isForwarded: false,
-	  }
-	 options.linkPreview = {
 		title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,
 		body: `ɪ ᴅᴏɴ'ᴛ ᴄᴀʀᴇ ᴀɴʏᴏɴᴇ!🥶`,
 		mediaType: 2,
@@ -57,7 +53,7 @@
 		options.duration = 7280542
 		options.ptt = true
 	}
-	options.audiowave = [0,10,20,30,40,50,60,70,80,90,99,90,80,70,60,50,40,30,20,10,0]
+	options.waveform = [0,10,20,30,40,50,60,70,80,90,99,90,80,70,60,50,40,30,20,10,0]
       x.sendMessage(teks, { audio: buffer, options })
     }
 break
