@@ -30,6 +30,13 @@ try {
         const pickRandom = (arr) => {
         return arr[Math.floor(Math.random() * arr.length)]
         }
+        let chats = global.db.data.chats[m.chat]
+        if (typeof chats !== 'object') global.db.data.chats[m.chat] = {}
+        if (chats) {
+        if (!('autoreact' in chats)) chats.autoreact = false
+        } else global.db.data.chats[m.chat] = {
+        autoreact: false,
+        }
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
