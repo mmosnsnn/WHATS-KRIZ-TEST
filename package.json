@@ -38,7 +38,7 @@
     "@hapi/boom": "^10.0.1",
     "abu-bot": "^2.4.0",
     "awesome-phonenumber": "^2.64.0",
-    "axios": "latest",
+    "axios": "^1.3.4",
     "chalk": "^4.1.1",
     "cheerio": "latest",
     "child_process": "latest",
