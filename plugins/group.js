@@ -6,7 +6,7 @@ case `${p}`+'add': {
 if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
-let users = m.quoted ? m.quoted.sender : teks.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await x.groupParticipantsUpdate(m.chat, [users], 'add')
 await m.reply(`@${users.split('@')[0]} added to this group!`)
 }
@@ -15,7 +15,7 @@ case `${p}`+'kick': {
 if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
-let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : teks.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await x.groupParticipantsUpdate(m.chat, [users], 'remove')
 await m.reply(`@${users.split('@')[0]} kicked out from this group!`)
 }
@@ -24,7 +24,7 @@ case `${p}`+'promote': {
 if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
-let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : teks.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await x.groupParticipantsUpdate(m.chat, [users], 'promote')
 await m.reply(`@${users.split('@')[0]} promoted as admin!`)
 }
@@ -33,7 +33,7 @@ case `${p}`+'demote': {
 if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
-let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : teks.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await x.groupParticipantsUpdate(m.chat, [users], 'demote')
 m.reply(`@${users.split('@')[0]} demoted as member!`)
 }
