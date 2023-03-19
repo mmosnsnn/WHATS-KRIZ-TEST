@@ -113,9 +113,17 @@ contextInfo: {
 			    }
                 
 //autodl Instagram
-//if (!text)
-//const instadl = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url={text}`)
-//x.sendMessage(m.chat, { video : { url : instadl.media.url }}, { quoted : m })
+if (link.includes("https://www.instagram.com")) {
+	insta(link).then(({ url }) => {
+ 
+   try { x.sendMessage(m.chat , { video : { url : url } } )
+       } catch {
+	       console.log("umm")
+    // x.sendMessage("ᴏᴏᴘs !! sᴏᴍᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ 🥴"); }
+    }
+    })
+}
+
 
 let time = moment.tz('Asia/Kolkata').format("hh:mm:ss")
   /*
