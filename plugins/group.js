@@ -41,6 +41,7 @@ break
 case `${p}`+'tagall': {
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isAdmins) await m.reply(`_This command only can use group admins and bot owners!_`)
+if (!isBotAdmins) await m.reply(`_I'm not admin_\n_Wanna tagall make me as admin!_`)
 let tmsg = `╭─────❮ᴛᴀɢᴀʟʟ❯──────✱`
 let count = `│🪀✱:`
 for (let mem of participants) {
