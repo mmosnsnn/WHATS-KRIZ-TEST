@@ -95,8 +95,10 @@ const buttonMessage = {
 }
 
 //Autoreact
+if (db.data.chats[m.chat].autoreact) {
 let rm = await pickRandom(["👀", "🦴", "😎", "🫶🏻"])
 	x.sendMessage(m.chat, { react: { text: rm, key: m.key }})
+}
 
 //Mention
 try {
