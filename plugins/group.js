@@ -3,7 +3,6 @@
   try{
 	switch (command) {
 case `${p}`+'add': {
-if (!teks) await m.reply(`_Give a number to add!_`)
 if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
@@ -13,7 +12,6 @@ await m.reply(`@${users.split('@')[0]} added to this group!`)
 }
 break
 case `${p}`+'kick': {
-if (!teks) await m.reply(`_Give a user to kick!_`)
 if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
@@ -23,7 +21,6 @@ await m.reply(`@${users.split('@')[0]} kicked out from this group!`)
 }
 break
 case `${p}`+'promote': {
-if (!teks) await m.reply(`_Give a user to promote!_`)
 if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
@@ -33,7 +30,6 @@ await m.reply(`@${users.split('@')[0]} promoted as admin!`)
 }
 break
 case `${p}`+'demote': {
-if (!teks) await m.reply(`_Give a user to demote!_`)
 if (!isCreator && !isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
 if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
