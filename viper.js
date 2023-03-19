@@ -97,9 +97,7 @@ const buttonMessage = {
 //Autoreact
 let rm = await pickRandom(["👀", "🦴", "😎", "🫶🏻"])
 	x.sendMessage(m.chat, { react: { text: rm, key: m.key }})
-} catch (e) {
-			    x.sendMessage(m.chat , { text : "(☞ ͡° ͜ʖ ͡°)☞     " + e } )
-			    }
+
 //Mention
 try {
 var audios = ["https://i.imgur.com/NTSnK6q.mp4" ,"https://i.imgur.com/GRlWXJh.mp4"]
