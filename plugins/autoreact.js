@@ -13,12 +13,17 @@
     db.data.chats[m.chat].autoreact = false
     m.reply(`_Autoreact is disabled!_`)
     } else {
-    let buttons = [
+    const buttons = [
     { buttonId: 'autoreact on', buttonText: { displayText: 'Oɴ' }, type: 1 },
     { buttonId: 'autoreact off', buttonText: { displayText: 'Oꜰꜰ' }, type: 1 }
     ]
-    await x.sendButtonText(m.chat, buttons, `Mode autoreact`, test, m)
+    const buttonMessage = {
+    caption: tiny(`Autoreact mode`),
+    footer: 'WʜᴀᴛꜱKʀɪᴢ AI',
+    buttons: buttons,
+    headerType: 4,
     }
+    x.sendMessage(m.chat, buttonMessage, { quoted : m })
 	}
 	break
 }
