@@ -18,10 +18,10 @@
     { buttonId: 'autoreact off', buttonText: { displayText: 'Oꜰꜰ' }, type: 1 }
     ]
     const buttonMessage = {
-    caption: tiny(`Autoreact mode`),
+    text: tiny(`Autoreact mode`),
     footer: 'WʜᴀᴛꜱKʀɪᴢ AI',
     buttons: buttons,
-    headerType: 4,
+    headerType: 1,
     }
     x.sendMessage(m.chat, buttonMessage, { quoted : m })
 	}
