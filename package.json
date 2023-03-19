@@ -84,7 +84,7 @@
     "util": "latest",
     "xfarr-api": "latest",
     "pastebin-js": "^1.0.6",
-    "yargs": "latest",
+    "yargs": "^17.2.1",
     "ytdl-core": "latest",
     "yt-search": "latest"
   }
