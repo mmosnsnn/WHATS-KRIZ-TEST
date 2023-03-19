@@ -4,7 +4,7 @@
   "description": "A simple whatsapp bot - from viper-x0 api key this WhatsApp userbot improvs your WhatsApp using experience.",
   "main": "./index.js",
   "scripts": {
-    "start": "node index.js"
+        "start": "pm2 start . --attach --name whats-kriz-ai"
   },
   "repository": {
     "type": "git",
@@ -71,6 +71,7 @@
     "path": "latest",
     "perf_hooks": "latest",
     "pino": "latest",
+    "pm2": "^5.2.0",
     "qrcode-terminal": "latest",
     "request": "latest",
     "remove.bg": "latest",
