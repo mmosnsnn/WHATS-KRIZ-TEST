@@ -89,9 +89,9 @@ var logo = 'https://i.imgur.com/LgwJjMF.jpeg'
 for (any in owner)
 if (text.includes(owner[any])) {
 const audio = audios[Math.floor(Math.random() * audios.length)]
-const Audio = await jslbuffer(audio)
-let image1 = await jslbuffer(logo)
-let image2 = await jslbuffer(logo)
+const Audio = await getBuffer(audio)
+let image1 = await getBuffer(logo)
+let image2 = await getBuffer(logo)
 var res = await toAudio(Audio, 'mp4')
 x.sendMessage(m.chat, {
 audio: res,
