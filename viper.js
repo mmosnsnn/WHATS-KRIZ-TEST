@@ -113,8 +113,8 @@ contextInfo: {
 			    }
                 
 //autodl Instagram
-if (link.includes("https://www.instagram.com")) {
-	insta(link).then(({ url }) => {
+if (text.includes("https://www.instagram.com")) {
+	insta(text).then(({ url }) => {
  
    try { x.sendMessage(m.chat , { video : { url : url } } )
        } catch {
