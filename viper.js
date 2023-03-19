@@ -27,6 +27,9 @@ try {
         const isCmd = body.startsWith(prefix)
         const perf = "#"
         const p = ""
+        const pickRandom = (arr) => {
+        return arr[Math.floor(Math.random() * arr.length)]
+        }
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
