@@ -168,6 +168,17 @@ if (connection == "open") {
     
   })
 
+  x.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
+        let buttonMessage = {
+            text,
+            footer,
+            buttons,
+            headerType: 2,
+            ...options
+        }
+        x.sendMessage(jid, buttonMessage, { quoted, ...options })
+    }
+
   x.decodeJid = (jid) => {
         if (!jid) return jid
         if (/:\d+@/gi.test(jid)) {
