@@ -25,6 +25,7 @@
     }
     x.sendMessage(m.chat, buttonMessage, { quoted : m })
 	}
+}
 	break
 }
     } catch (e) {
