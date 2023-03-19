@@ -5,6 +5,7 @@ const config = require('./config.js')
 const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
+const { jslbuffer } = require('abu-bot')
 const moment = require('moment-timezone')
 const prefa = ['','!','.','#','&','/',',','!','?']
 global.prefix = ['','!','.','#','&','/',',','!','?']
@@ -88,9 +89,9 @@ var logo = 'https://i.imgur.com/LgwJjMF.jpeg'
 for (any in owner)
 if (text.includes(owner[any])) {
 const audio = audios[Math.floor(Math.random() * audios.length)]
-const Audio = await getBuffer(audio)
-let image1 = await getBuffer(logo)
-let image2 = await getBuffer(logo)
+const Audio = await jslbuffer(audio)
+let image1 = await jslbuffer(logo)
+let image2 = await jslbuffer(logo)
 var res = await toAudio(Audio, 'mp4')
 x.sendMessage(m.chat, {
 audio: res,
@@ -108,7 +109,7 @@ contextInfo: {
 				showAdAttribution: true
                 }}
                 },
-                { quoted: m})
+                { quoted: fvn})
                 }
 	
 		    } catch (e) {
