@@ -4,6 +4,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 console.log("Starting...📶");
 const P = require("pino")
 const FileType = require('file-type')
+const _ = require('lodash')
 const yargs = require('yargs/yargs')
 const PhoneNumber = require('awesome-phonenumber')
 const { MakeSession } = require("./lib/session")
