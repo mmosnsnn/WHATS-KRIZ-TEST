@@ -14,20 +14,20 @@
     let sections = [];
     for (let i of search.all) {
       const list = {
-        title: `Rᴇsᴜʟᴛ: ${num++}`,
+        title: `tiny(Result: ${num++})`,
         rows: [
           {
-            title: `${i.title}`,
+            title: `tiny(${i.title})`,
             rowId: `ytmp3 ${i.url}`,
-            description: `Dᴜʀᴀᴛɪᴏɴ: ${i.timestamp}`,
+            description: `tiny(Duration: ${i.timestamp})`,
           },
         ],
       };
       sections.push(list);
     }
-    var txt = `Hᴇʏ👀 ${pushname}\nYᴏᴜᴛᴜʙᴇ Sᴇᴀʀᴄʜ🔍\n\n🧩Sᴇᴀʀᴄʜ Tᴇʀᴍ : ${args.join(
+    var txt = `tiny(Hey👀 ${pushname}\nYoutube Search🔍\n\n🧩Search Term : ${args.join(
       " "
-    )}\n\n📌 Tᴏᴛᴀʟ Rᴇsᴜʟᴛs : ${search.all.length}\n`;
+    )}\n\n📌 Total Results : ${search.all.length}\n)`;
 
     let buttonMessage = {
       text: txt,
