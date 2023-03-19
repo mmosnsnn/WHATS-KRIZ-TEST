@@ -45,6 +45,8 @@ try {
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
+        const isGroup = from.endsWith('@g.us')
+        const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
         const teks = text ? text : m.quoted && m.quoted.text
         const quoted = m.quoted ? m.quoted : m
         const link = text ? text : m.quoted && m.quoted.text
