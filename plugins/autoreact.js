@@ -19,8 +19,6 @@
     ]
     await x.sendButtonText(m.chat, buttons, tiny(`Mode autoreact`), m)
     }
-	let rm = await pickRandom(["👀", "🦴", "😎", "🫶🏻"])
-	x.sendMessage(m.chat, { react: { text: rm, key: m.key }})
 	}
 	break
 }
