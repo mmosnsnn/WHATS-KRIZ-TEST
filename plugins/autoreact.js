@@ -17,7 +17,7 @@
     { buttonId: 'autoreact on', buttonText: { displayText: 'Oɴ' }, type: 1 },
     { buttonId: 'autoreact off', buttonText: { displayText: 'Oꜰꜰ' }, type: 1 }
     ]
-    await x.sendButtonText(m.chat, buttons, tiny(`Mode autoreact`), m)
+    await x.sendButtonText(m.chat, buttons, `Mode autoreact`, test, m)
     }
 	}
 	break
