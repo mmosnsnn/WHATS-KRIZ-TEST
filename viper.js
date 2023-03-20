@@ -34,9 +34,9 @@ try {
         let chats = global.db.data.chats[m.chat]
         if (typeof chats !== 'object') global.db.data.chats[m.chat] = {}
         if (chats) {
-        if (!('react' in chats)) chats.react = false
+        if (!('autoreact' in chats)) chats.autoreact = false
         } else global.db.data.chats[m.chat] = {
-        react: false
+        autoreact: false
         }
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
@@ -98,11 +98,11 @@ const buttonMessage = {
 }
 
 //Autoreact
-if (db.data.chats[m.chat].react && !isCreator) {
+if (db.data.chats[m.chat].autoreact && !isCreator) {
       return
       }
 let rm = await pickRandom(["👀", "🦴", "😎", "🫶🏻"])
-	x.sendMessage(m.chat, { react: { text: rm, key: m.key }})
+	x.sendMessage(m.chat, { react: { text: rm, key: m.key}})
 
 //Mention
 try {
