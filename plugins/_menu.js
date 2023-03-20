@@ -6,39 +6,59 @@
       
 
 
-let fek = `Usᴇʀ ${pushname}
+let fek = tiny(`At : ${time}
 
-✵ ᴊɪᴅ
+User : ${pushname}
 
-✵ ᴩʟᴀy
+✵ menu
 
-✵ ᴩɪɴɢ
+✵ owner
 
-✵ ᴍꜰ
+✵ jid
 
-✵ yᴛᴍᴩ3
+✵ getjids
 
-✵ yᴛᴍᴩ4
+✵ runtime
 
-✵ ɪɴꜱᴛᴀ
+✵ ytmp3
 
-✵ ɢᴇᴛᴊɪᴅꜱ
+✵ ymp4
 
-✵ ʀᴜɴᴛɪᴍᴇ
+✵ ping
 
-✵ sᴏɴɢ
+✵ mf
 
-✵ ᴏᴡɴᴇʀ
+✵ song
 
-✵ ᴀᴅᴅ
+✵ play
 
-✵ ᴘʀᴏᴍᴏᴛᴇ
+✵ insta
 
-✵ ᴅᴇᴍᴏᴛᴇ
+✵ ai
 
-✵ ᴋɪᴄᴋ
+✵ mp3
 
-✵ ᴍᴇɴᴜ`
+✵ qc
+
+✵ sticker
+
+✵ take
+
+✵ photo
+
+✵ add
+
+✵ kick
+
+✵ promote
+
+✵ demote
+
+✵ tagall
+
+✵ tag
+
+✵ >`)
 let { result} = await getJson('https://gist.githubusercontent.com/Djjdkdm/ef1ccb7b34d73726773d0ccf1ab317b9/raw/2412fdfa8225e95b79f76fa4a97e70582b371320/menu.json')
 let kriz = result[Math.floor(Math.random()*result.length)]
 try {
@@ -51,7 +71,7 @@ const buttons = [
   {buttonId:  'ping', buttonText: {displayText: 'ᴩɪɴɢ'}, type: 1}]
 
 const buttonMessage = {
-    video: {url: kriz},
+    document: fs.readFileSync('./src/WHATS-KRIZ-AI.xlxx'),
     caption: fek,
     footer: 'WʜᴀᴛꜱKʀɪᴢ AI',
     buttons: buttons,
