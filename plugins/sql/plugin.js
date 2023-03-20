@@ -1,4 +1,4 @@
-const config = require('.../config.js')
+const config = require('../../config.js')
 const { DataTypes } = require('sequelize')
 
 const PluginDB = config.DATABASE.define('Plugin', {
