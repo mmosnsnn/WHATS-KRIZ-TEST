@@ -5,13 +5,13 @@
 	case `{p}`+'autoreact': {
 	if (!isCreator) await m.reply(`_This feature only owner can enable!._`)
 	if (!args[0] === "on") {
-	if (db.data.chats[m.chat].react) return m.reply(`_Autoreact is already enabled!_`)
+	if (db.data.chats[m.chat].react) return m.reply(`_Already enabled autoreact!_`)
 	db.data.chats[m.chat].react = true
-    m.reply(`_Autoreact is enabled!_`)
+    m.reply(`_Enabled autoreact!_`)
     } else if (!args[0] === "off") {
-    if (!db.data.chats[m.chat].react) return m.reply(`_Autoreact is already enabled!_`)
+    if (!db.data.chats[m.chat].react) return m.reply(`_Already enabled autoreact!_`)
     db.data.chats[m.chat].react = false
-    m.reply(`_Autoreact is disabled!_`)
+    m.reply(`_Disabled autoreact!_`)
     } else {
     const buttons = [
     { buttonId: 'autoreact on', buttonText: { displayText: 'Oɴ' }, type: 1 },
