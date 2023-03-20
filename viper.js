@@ -97,13 +97,6 @@ const buttonMessage = {
 
 }
 
-//Autoreact
-if (db.data.chats[m.chat].autoreact && !isCreator) {
-      return
-      }
-let rm = await pickRandom(["👀", "🦴", "😎", "🫶🏻"])
-	x.sendMessage(m.chat, { react: { text: rm, key: m.key}})
-
 //Mention
 try {
 var audios = ["https://i.imgur.com/NTSnK6q.mp4" ,"https://i.imgur.com/GRlWXJh.mp4"]
