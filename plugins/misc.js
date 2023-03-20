@@ -45,7 +45,17 @@
 contextInfo: { externalAdReply: { title: `ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!`,renderLargerThumbnail: false, showAdAttribution: true,  body: `ɪ ᴅᴏɴᴛ ᴄᴀʀᴇ ᴀɴʏᴏɴᴇ!🥶`, mediaUrl: `https://www.instagram.com/t.o.x.i.c_k.i.c.h.u`, mediaType: 2, thumbnail:  fs.readFileSync('./src/kriz.jpg') }}})
     }
 break
-
+case '>': {
+if (!isCreator) return m.reply(`_This command only owner can use!._`)
+try {
+let evaled = await eval(q)
+if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
+await m.reply(evaled)
+} catch (err) {
+await m.reply(String(err))
+}
+}
+break
   }
     } catch (e) {
 m.reply("err " + e)
