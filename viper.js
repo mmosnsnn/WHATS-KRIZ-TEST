@@ -34,9 +34,9 @@ try {
         let chats = global.db.data.chats[m.chat]
         if (typeof chats !== 'object') global.db.data.chats[m.chat] = {}
         if (chats) {
-        if (!('autoreact' in chats)) chats.autoreact = false
+        if (!('react' in chats)) chats.react = false
         } else global.db.data.chats[m.chat] = {
-        autoreact: false
+        react: false
         }
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
@@ -130,7 +130,7 @@ contextInfo: {
 				showAdAttribution: true
                 }}
                 },
-                { quoted: fvn})
+                { quoted: m})
                 }
 	
 		    } catch (e) {
