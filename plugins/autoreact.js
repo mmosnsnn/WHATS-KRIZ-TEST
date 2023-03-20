@@ -17,13 +17,7 @@
     { buttonId: 'autoreact on', buttonText: { displayText: 'Oɴ' }, type: 1 },
     { buttonId: 'autoreact off', buttonText: { displayText: 'Oꜰꜰ' }, type: 1 }
     ]
-    const buttonMessage = {
-    text: tiny(`Autoreact mode`),
-    footer: 'WʜᴀᴛꜱKʀɪᴢ AI',
-    buttons: buttons,
-    headerType: 1,
-    }
-    x.sendMessage(m.chat, buttonMessage, { quoted : m })
+    x.sendButtonText(m.chat, buttons, `Mode autoreact`, x.user.name, m, { quoted : m })
 	}
 }
 	break
