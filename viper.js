@@ -36,7 +36,7 @@ try {
         if (chats) {
         if (!('autoreact' in chats)) chats.autoreact = false
         } else global.db.data.chats[m.chat] = {
-        autoreact: false,
+        autoreact: false
         }
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const cmnd = body.replace(perf, perf).trim().split(/ +/).shift().toLowerCase()
