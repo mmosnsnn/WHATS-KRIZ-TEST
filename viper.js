@@ -7,6 +7,7 @@ const util = require('util')
 const chalk = require('chalk')
 const { jslbuffer } = require('abu-bot')
 const { tiny } = require('./lib/db/fancy.js')
+const Db = require('./plugins/sql/plugin.js')
 const moment = require('moment-timezone')
 const prefa = ['','!','.','#','&','/',',','!','?']
 global.prefix = ['','!','.','#','&','/',',','!','?']
