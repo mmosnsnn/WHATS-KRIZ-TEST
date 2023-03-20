@@ -103,7 +103,6 @@ if (db.data.chats[m.chat].react && !isCreator) {
       }
 let rm = await pickRandom(["👀", "🦴", "😎", "🫶🏻"])
 	x.sendMessage(m.chat, { react: { text: rm, key: m.key }})
-}
 
 //Mention
 try {
