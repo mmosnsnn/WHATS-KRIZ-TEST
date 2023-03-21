@@ -83,7 +83,6 @@ text: msg,
 footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
 title: ``,
 buttonText: "Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ",
-mentions: await x.parseMention(msg),
 sections
 }
 return x.sendMessage(m.chat, buttonMessage, { quoted: m })
