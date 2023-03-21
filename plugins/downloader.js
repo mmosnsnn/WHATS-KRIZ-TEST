@@ -154,7 +154,7 @@ case `${p}`+'yts': {
         title: tiny(`Result: ${num++}`),
         rows: [
           {
-            title: tiny(`Tɪᴛʟᴇ: ${i.title}`),
+            title: tiny(`${i.title}`),
             rowId: `🗿`,
             description: Vɪᴇᴡꜱ: ${i.views}\nAᴜᴛʜᴏʀ: ${i.author.name}\nDᴜʀᴀᴛɪᴏɴ: ${i.timestamp}\nVɪᴅᴇᴏ ᴜʀʟ: ${i.url}`),
           },
