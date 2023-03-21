@@ -43,9 +43,7 @@ case `${p}`+'play': {
 if (!teks) await m.reply(`_Need a topic!._`)
 let search = await yts(teks)
 let anu = search.videos[0];
-let sections = [];
-for (let k of search.all) {
-const list = [{
+let list = [{
 title: tiny(`Download Video`),
 rowId: `ytmp4 ${k.url}`,
 description: tiny(' ')
@@ -75,16 +73,20 @@ title: tiny(`Search More Audios`),
 rowId: `ytas ${teks}`,
 description: ' '
 }]
-}
-sections.push(list)
 let msg = tiny(`Yotube Downloader⏯️\n\n👤Requested by : ${pushname}\n\n▶️Requested topic : ${teks}`)
+let sections  = [{
+title: "Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ",
+rows: list
+}]
 let buttonMessage = {
 text: msg,
 footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
+title: ``,
 buttonText: "Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ",
-sections,
+mentions: await x.parseMention(msg),
+sections
 }
-x.sendMessage(m.chat, buttonMessage, { quoted: m })
+return x.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
 case `${p}`+'ytmp3': {
