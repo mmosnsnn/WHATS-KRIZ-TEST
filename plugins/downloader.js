@@ -154,15 +154,15 @@ case `${p}`+'yts': {
         title: tiny(`Result: ${num++}`),
         rows: [
           {
-            title: tiny(`${i.title}`),
+            title: tiny(`Tɪᴛʟᴇ: ${i.title}`),
             rowId: `🗿`,
-            description: tiny(`Title: ${i.title}\nViews: ${i.views}\nAuthor: {i.author.name}\nDuration: ${i.timestamp}\nVideo url: ${i.url}`),
+            description: Vɪᴇᴡꜱ: ${i.views}\nAᴜᴛʜᴏʀ: ${i.author.name}\nDᴜʀᴀᴛɪᴏɴ: ${i.timestamp}\nVɪᴅᴇᴏ ᴜʀʟ: ${i.url}`),
           },
         ],
       };
       sections.push(list);
     }
-    var txt = tiny(`Youtube Search🔍\n\nRequested By: ${pushname}\nSearch Topic : ${args.join(
+    var txt = tiny(`Youtube Search🔍\n\n👤Requested By: ${pushname}\n\n🔎Search Topic : ${args.join(
       " "
     )}\n\n Total Results : ${search.all.length}\n`);
 
