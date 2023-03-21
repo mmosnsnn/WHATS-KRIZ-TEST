@@ -156,7 +156,7 @@ case `${p}`+'yts': {
           {
             title: tiny(`Tɪᴛʟᴇ: ${i.title}`),
             rowId: `🗿`,
-            description: `Vɪᴇᴡꜱ: ${i.views}\nAᴜᴛʜᴏʀ: ${i.author.name}\nDᴜʀᴀᴛɪᴏɴ: ${i.timestamp}\nVɪᴅᴇᴏ ᴜʀʟ: ${i.url}`),
+            description: `Vɪᴇᴡꜱ: ${i.views}\nAᴜᴛʜᴏʀ: ${i.author.name}\nDᴜʀᴀᴛɪᴏɴ: ${i.timestamp}\nVɪᴅᴇᴏ ᴜʀʟ: ${i.url}`,
           },
         ],
       };
