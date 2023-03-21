@@ -40,31 +40,49 @@
   }
             break
 case `${p}`+'play': {
-		if (!text) await m.reply('_sᴏɴɢ xxxᴛᴇɴᴀᴄᴛɪᴏɴ ʜᴏᴘᴇ_')
-                let search = await yts(text)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                let buttons = [
-                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: 'ᴀᴜᴅɪᴏ🎵'}, type: 1},
-                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: 'ᴠɪᴅᴇᴏ▶️'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: anu.thumbnail },
-                    caption: `
-ᴛɪᴛʟᴇ : ${anu.title}
-ᴅᴜʀᴀᴛɪᴏɴ : ${anu.timestamp}
-ᴠɪᴇᴡᴇʀꜱ : ${anu.views}
-ᴜᴘʟᴏᴀᴅ ᴀᴛ : ${anu.ago}
-ᴀᴜᴛʜᴏʀ : ${anu.author.name}
-ᴄʜᴀɴɴᴇʟ : ${anu.author.url}
-ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ : ${anu.description}
-ᴠɪᴅᴇᴏ ᴜʀʟ : ${anu.url}`,
-                    footer: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
-                    buttons: buttons,
-                    headerType: 4
-                }
-                x.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break
+if (!teks) await m.reply(`_Need a topic!._`)
+let search = await yts(teks)
+let anu = search.videos[0];
+let list = [{
+title: tiny(`Download Video`),
+rowId: `ytmp4 ${anu.url}`,
+description: tiny(' ')
+},
+{
+title: tiny(`Download Audio`),
+rowId: `ytmp3 ${anu.url}`,
+description: tiny(' ')
+},
+{
+title: tiny(`Download Audio Document`),
+rowId: `${prefix}ytmp3doc ${anu.url}`,
+description: tiny(' ')
+},
+{
+title: tiny(`Download Video Document`),
+rowId: `${prefix}ytmp4doc ${anu.url}`,
+description: tiny(' ')
+},
+{
+title: tiny(`Search More Videos`),
+rowId: `ytvs ${teks}`,
+description: ' '
+},
+{
+title: tiny(`Search More Audios`),
+rowId: `ytas ${teks}`,
+description: ' '
+}]
+let msg = tiny(`Yotube Downloader⏯️\n\n👤Requested by : ${pushname}\n\n▶️Requested topic : ${teks}`)
+let buttonMessage = {
+text: msg,
+footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
+buttonText: "Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ",
+list,
+}
+x.sendMessage(m.chat, buttonMessage, { quoted: m })
+}
+break
 case `${p}`+'ytmp3': {
 if (!text) await m.reply(`_Send youtube video link!_`)
 let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
