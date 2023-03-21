@@ -139,6 +139,43 @@ let response = await fetchJson(`https://api-viper-x0.vercel.app/api/insta?url=${
 x.sendMessage(m.chat, { video: { url: response.media.url }, fileName: 'ig.mp4', mimetype: 'video/mp4' }, { quoted: m })
 }
 break
+case `${p}`+'yts': {
+      if (!args[0])
+      return x.sendMessage(
+        m.chat,
+        { text: `_Please provide a name!_` },
+        { quoted: m }
+      );
+    let search = await yts(text);
+    let num = 1;
+    let sections = [];
+    for (let i of search.all) {
+      const list = {
+        title: tiny(`Result: ${num++}`),
+        rows: [
+          {
+            title: tiny(`${i.title}`),
+            rowId: `🗿`,
+            description: tiny(`Title: ${i.title}\nViews: ${i.views}\nAuthor: {i.author.name}\nDuration: ${i.timestamp}\nVideo url: ${i.url}`),
+          },
+        ],
+      };
+      sections.push(list);
+    }
+    var txt = tiny(`Youtube Search🔍\n\nRequested By: ${pushname}\nSearch Topic : ${args.join(
+      " "
+    )}\n\n Total Results : ${search.all.length}\n`);
+
+    let buttonMessage = {
+      text: txt,
+      footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
+      buttonText: "Sᴇʟᴇᴄᴛ",
+      sections,
+    };
+
+  x.sendMessage(m.chat, buttonMessage, { quoted: m });
+  }
+            break
 }
     } catch (e) {
       console.log(e)
