@@ -45,22 +45,22 @@ let search = await yts(teks)
 let anu = search.videos[0];
 let list = [{
 title: tiny(`Download Video`),
-rowId: `ytmp4 ${k.url}`,
+rowId: `ytmp4 ${anu.url}`,
 description: tiny(' ')
 },
 {
 title: tiny(`Download Audio`),
-rowId: `ytmp3 ${k.url}`,
+rowId: `ytmp3 ${anu.url}`,
 description: tiny(' ')
 },
 {
 title: tiny(`Download Audio Document`),
-rowId: `${prefix}ytmp3doc ${k.url}`,
+rowId: `ytmp3doc ${anu.url}`,
 description: tiny(' ')
 },
 {
 title: tiny(`Download Video Document`),
-rowId: `${prefix}ytmp4doc ${k.url}`,
+rowId: `$ytmp4doc ${anu.url}`,
 description: tiny(' ')
 },
 {
