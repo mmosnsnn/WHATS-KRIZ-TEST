@@ -43,24 +43,26 @@ case `${p}`+'play': {
 if (!teks) await m.reply(`_Need a topic!._`)
 let search = await yts(teks)
 let anu = search.videos[0];
-let list = [{
+let sections = [];
+for (let k of search.all) {
+const list = [{
 title: tiny(`Download Video`),
-rowId: `ytmp4 ${anu.url}`,
+rowId: `ytmp4 ${k.url}`,
 description: tiny(' ')
 },
 {
 title: tiny(`Download Audio`),
-rowId: `ytmp3 ${anu.url}`,
+rowId: `ytmp3 ${k.url}`,
 description: tiny(' ')
 },
 {
 title: tiny(`Download Audio Document`),
-rowId: `${prefix}ytmp3doc ${anu.url}`,
+rowId: `${prefix}ytmp3doc ${k.url}`,
 description: tiny(' ')
 },
 {
 title: tiny(`Download Video Document`),
-rowId: `${prefix}ytmp4doc ${anu.url}`,
+rowId: `${prefix}ytmp4doc ${k.url}`,
 description: tiny(' ')
 },
 {
@@ -73,12 +75,14 @@ title: tiny(`Search More Audios`),
 rowId: `ytas ${teks}`,
 description: ' '
 }]
+}
+sections.push(list)
 let msg = tiny(`Yotube Downloader⏯️\n\n👤Requested by : ${pushname}\n\n▶️Requested topic : ${teks}`)
 let buttonMessage = {
 text: msg,
 footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
 buttonText: "Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ",
-list,
+sections,
 }
 x.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
