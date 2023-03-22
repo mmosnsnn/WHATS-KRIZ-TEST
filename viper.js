@@ -101,11 +101,11 @@ const buttonMessage = {
 
 //Mention
 try {
-var audios = ["https://i.imgur.com/NTSnK6q.mp4", "https://i.imgur.com/GRlWXJh.mp4", "https://i.imgur.com/zBhiBl9.mp4", "https://i.imgur.com/iUdUOoy.mp4"]
+let { result } = await getJson(`https://gist.githubusercontent.com/Djjdkdm/03c3119faf9151cb5add5bbdd1f21f1a/raw/5933860ed07feb39dfbe65cfdc27ed4d5c29b069/mention.json`)
 var logo = 'https://i.imgur.com/LgwJjMF.jpeg'
 for (any in owner)
 if (text.includes(owner[any])) {
-const audio = audios[Math.floor(Math.random() * audios.length)]
+const audio = result[Math.floor(Math.random() * result.length)]
 let image1 = await getBuffer(logo)
 let image2 = await getBuffer(logo)
 x.sendMessage(m.chat, {
