@@ -25,7 +25,7 @@
       };
       sections.push(list);
     }
-    var txt = tiny(`Hey👀 ${pushname}\nYoutube Search🔍\n\n🧩Search Term : ${args.join(
+    var txt = tiny(`User: ${pushname}\n\nYoutube Search🔍\n\n🧩Search Term : ${args.join(
       " "
     )}\n\n📌 Total Results : ${search.all.length}\n`);
 
@@ -73,7 +73,7 @@ title: tiny(`Search More Audios`),
 rowId: `ytas ${teks}`,
 description: ' '
 }]
-let msg = tiny(`Yotube Downloader⏯️\n\n👤Requested by : ${pushname}\n\n▶️Requested topic : ${teks}`)
+let msg = tiny(`Yotube Downloader⏯️\n\n👤Requested By : ${pushname}\n\n▶️Requested Topic : ${teks}`)
 let sections  = [{
 title: "Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ",
 rows: list
@@ -175,6 +175,22 @@ case `${p}`+'yts': {
   x.sendMessage(m.chat, buttonMessage, { quoted: m });
   }
             break
+case `${p}`+'ytmp3doc': {
+await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
+}
+break
+case `${p}`+'ytmp4doc': {
+await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
+}
+break
+case `${p}`+'ytvs': {
+await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
+}
+break
+case `${p}`+'ytas': {
+await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
+}
+break
 }
     } catch (e) {
       console.log(e)
