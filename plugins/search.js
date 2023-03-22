@@ -3,9 +3,9 @@
   try{
 	switch (command) {
 case `${p}`+'weather':{
-if(!args[0]) await m.reply(`_Please provide place or location name._`)
+if(!teks) await m.reply(`_Please provide place or location name._`)
 try{
-let response = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args[0]}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273`)
+let response = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${teks}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273`)
 let res = await response
 let name = res.data.name
 let Country = res.data.sys.country
