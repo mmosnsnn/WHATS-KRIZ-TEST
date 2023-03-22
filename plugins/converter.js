@@ -97,6 +97,24 @@
                 })
             }
             break
+case `${p}`+'tts': {
+let texttts = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text;
+const ttsurl = googleTTS.getAudioUrl(texttts, {
+lang: "en",
+slow: false,
+host: "https://translate.google.com",
+});
+x.sendMessage(m.chat, {
+audio: {
+url: ttsurl,
+},
+mimetype: "audio/mpeg",
+fileName: `${pushname}.mp3`,
+}, {
+quoted: m,
+})
+}
+break
 }
     } catch (e) {
       console.log(e)
