@@ -22,8 +22,8 @@ m.reply('_Location not found, please enter country name._')
  }
 break
 case `${p}`+'true': {
-if (!teks) await m.reply(`_Mention any user or give a number like 91xxxxxxxxx_`)
-const kriztrue = await fetchJson(`https://outrageous-fish-dress.cyclic.app/api/other/truecaller?number=${teks}`)
+if (!teks && !args[0]) await m.reply(`_Mention any user or give a number like 91xxxxxxxxx_`)
+const kriztrue = await fetchJson(`https://outrageous-fish-dress.cyclic.app/api/other/truecaller?number=${args[0]}`)
 const tmsg = tiny(`╭╼━━⌜Number Info⌟━━╾✵
 ╽Name : ${kriztrue.data.data[0].name}
 ┃Score : ${kriztrue.data.data[0].score}
