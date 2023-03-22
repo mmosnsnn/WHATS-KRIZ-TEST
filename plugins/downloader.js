@@ -73,14 +73,14 @@ title: tiny(`Search More Audios`),
 rowId: `ytas ${teks}`,
 description: ' '
 }]
-let msg = tiny(`Yotube Downloader⏯️\n\n👤Requested By : ${pushname}\n\n▶️Requested Topic : ${teks}`)
+let msg = tiny(`${anu.title}`)
 let sections  = [{
 title: "Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ",
 rows: list
 }]
 let buttonMessage = {
 text: msg,
-footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
+footer: config.FOOTER,
 title: ``,
 buttonText: "Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ",
 sections
