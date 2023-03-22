@@ -26,11 +26,7 @@ contextInfo: {
 				showAdAttribution: true
                 }}
                 },
-                { quoted: m})
-	
-		    } catch (e) {
-			    x.sendMessage(m.chat , { text : "(☞ ͡° ͜ʖ ͡°)☞     " + e } )
-			    }
+                { quoted: m})		    
 }
 break
 }
