@@ -21,6 +21,23 @@ m.reply('_Location not found, please enter country name._')
  }
  }
 break
+case `${p}`+'true': {
+if (!teks) await m.reply(`_Mention any user or give a number like 91xxxxxxxxx_`)
+const kriztrue = await fetchJson(`https://outrageous-fish-dress.cyclic.app/api/other/truecaller?number=${teks}`)
+const tmsg = tiny(`╭╼━━⌜Number Info⌟━━╾✵
+╽Name : ${kriztrue.data.data[0].name}
+┃Score : ${kriztrue.data.data[0].score}
+┃Access : ${kriztrue.data.data[0].access}
+┃Career : ${kriztrue.data.data[0].phones[0].carrier}
+┃Dialing Code : ${kriztrue.data.data[0].phones[0].dialingCode}
+┃Country : ${kriztrue.data.data[0].phones[0].countryCode}
+┃City : ${kriztrue.data.data[0].phones[0].city}
+┃Type : ${kriztrue.data.data[0].phones[0].type}
+╿Time Zone : ${kriztrue.data.data[0].addresses[0].timeZone}
+╰╼━━━━━━━━━━━━╾✵`)
+await m.reply(tmsg)
+}
+break
 }
     } catch (e) {
       console.log(e)
