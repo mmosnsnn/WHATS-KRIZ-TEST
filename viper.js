@@ -101,17 +101,17 @@ const buttonMessage = {
 
 //Mention
 try {
-var audios = ["https://i.imgur.com/NTSnK6q.mp4" ,"https://i.imgur.com/GRlWXJh.mp4"]
+var audios = ["https://i.imgur.com/NTSnK6q.mp4" ,"https://i.imgur.com/GRlWXJh.mp4", "https://i.imgur.com/zBhiBl9.mp4", "https://i.imgur.com/iUdUOoy.mp4"]
 var logo = 'https://i.imgur.com/LgwJjMF.jpeg'
 for (any in owner)
-if (text.includes(owner[any])) {
+if (teks.includes(owner[any])) {
 const audio = audios[Math.floor(Math.random() * audios.length)]
 const Audio = await getBuffer(audio)
 let image1 = await getBuffer(logo)
 let image2 = await getBuffer(logo)
 var res = await toAudio(Audio, 'mp4')
 x.sendMessage(m.chat, {
-audio: res,
+audio: { url: audio },
 mimetype: 'audio/mpeg',
 ptt: true,
 waveform: [99,50,99,50,99],
