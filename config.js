@@ -11,6 +11,7 @@ module.exports = {
   SESSION_ID:process.env.SESSION_ID || " ",
   BRANCH: "master",
   MENU_MEDIA: process.env.MENUMEDIA || " ",
+  FOOTER: process.env.FOOTER || " ",
   PACKNAME: process.env.PACKNAME || "WHATS-KRIZ-AI",
   BCAUDIO_IMAGE: process.env.BCAUDIO_IMAGE || " ",
   OPENAI_API_KEY: process.env.OPENAI_API_KEY || " ",
