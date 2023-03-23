@@ -176,7 +176,25 @@ case `${p}`+'yts': {
   }
             break
 case `${p}`+'ytmp3doc': {
-await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
+if (!text) await m.reply(`_Send youtube video link!_`)
+let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+if (!isLinks2) return m.reply(`_Invalid link!_`)
+anu = await ytMp4(`${q}`)
+m.reply(`_${anu.title} song is downloading...!_`)
+x.sendMessage(m.chat, { document: { url: anu.result }, fileName: anu.title, mimetype: 'audio/mpeg',
+    contextInfo:{
+        externalAdReply:{
+            title: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
+            body: pushname,
+            thumbnail: await fetchBuffer(anu.thumb),
+            mediaType:2,
+            mediaUrl: text,
+            sourceUrl: text,
+            showAdAttribution: true
+        }
+
+    },
+},{quoted:m})
 }
 break
 case `${p}`+'ytmp4doc': {
