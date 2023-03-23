@@ -19,7 +19,7 @@ const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
 const { toAudio } = require('./lib/converter.js')
 const yts = require('yt-search')
 const gptapikey = config.OPENAI_API_KEY
-const { parsedJid, parseMention, fetchJson, getJson, sleep, fetchBuffer, getRandom, getBuffer } = require('./lib/myfunc.js')
+const { parsedJid, parseMention, fetchJson, isUrl, getJson, sleep, fetchBuffer, getRandom, getBuffer } = require('./lib/myfunc.js')
 const owner = global.owner
 
 module.exports = viper = async (x, m, chatUpdate) => {
