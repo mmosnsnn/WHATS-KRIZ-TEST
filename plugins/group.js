@@ -21,8 +21,8 @@ await m.reply(`@${users.split('@')[0]} kicked out from this group!`)
 }
 break
 case `${p}`+'promote': {
-if (!groupAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
-if (!m.isGroup) await m.reply(`_This command is only for use in groups!_`)
+if (!isAdmins) await m.reply(`_This command is only for bot owner and group admin!._`)
+if (!isGroup) await m.reply(`_This command is only for use in groups!_`)
 if (!isBotAdmins) await m.reply(`_I'm not admin!_`)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await x.groupParticipantsUpdate(m.chat, [users], 'promote')
