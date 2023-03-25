@@ -7,6 +7,7 @@ const util = require('util')
 const chalk = require('chalk')
 const googleTTS = require('google-tts-api')
 const { tiny } = require('./lib/db/fancy.js')
+const { allmenu } = require('./lib/_menu.js')
 const { PluginDB, installPlugin } = require('./plugins/sql/plugin.js')
 const moment = require('moment-timezone')
 const prefa = ['','!','.','#','&','/',',','!','?']
