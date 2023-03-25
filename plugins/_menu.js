@@ -10,55 +10,8 @@ let fek = tiny(`At : ${time}
 
 User : ${pushname}
 
-✵ menu
-
-✵ owner
-
-✵ jid
-
-✵ getjids
-
-✵ runtime
-
-✵ ytmp3
-
-✵ ymp4
-
-✵ ping
-
-✵ mf
-
-✵ song
-
-✵ play
-
-✵ insta
-
-✵ ai
-
-✵ mp3
-
-✵ qc
-
-✵ sticker
-
-✵ take
-
-✵ photo
-
-✵ add
-
-✵ kick
-
-✵ promote
-
-✵ demote
-
-✵ tagall
-
-✵ tag
-
-✵ >`)
+${allmenu}
+`)
 let { result} = await getJson('https://gist.githubusercontent.com/Djjdkdm/ef1ccb7b34d73726773d0ccf1ab317b9/raw/2412fdfa8225e95b79f76fa4a97e70582b371320/menu.json')
 let kriz = result[Math.floor(Math.random()*result.length)]
 try {
