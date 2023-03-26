@@ -13,21 +13,21 @@ User : ${pushname}
 
 ╭╼━━━╾[Commands]╼━━━╾㊑
 ╽╭╼━━━━MainMenu━━━╾⳻᷼⳺
-${mainmenu}
+┃╽${mainmenu}
 ┃╭╼━━━Downloader━━━╾⳻᷼⳺
-${downloader}
+┃╽${downloader}
 ┃╭╼━━━━Converter━━━╾⳻᷼⳺
-${converter}
+┃╽${converter}
 ┃╭╼━━━━━Chatgpt━━━━╾⳻᷼⳺
-${chatgpt}
+┃╽${chatgpt}
 ┃╭╼━━━━━━Misc━━━━━╾⳻᷼⳺
-${misc}
+┃╽${misc}
 ┃╭╼━━━━━BotStats━━━━╾⳻᷼⳺
-${botstats}
+┃╽${botstats}
 ┃╭╼━━━━━Whatsapp━━━━╾⳻᷼⳺
-${whatsapp}
+┃╽${whatsapp}
 ┃╭╼━━━━━Group━━━━╾⳻᷼⳺
-${group}
+┃╽${group}
 ╰╼━━╾[WHATS-KRIZ-AI]╼━━╾㊑
 `)
 let { result} = await getJson('https://gist.githubusercontent.com/Djjdkdm/ef1ccb7b34d73726773d0ccf1ab317b9/raw/2412fdfa8225e95b79f76fa4a97e70582b371320/menu.json')
