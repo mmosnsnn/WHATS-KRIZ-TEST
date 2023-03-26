@@ -45,7 +45,6 @@ let buttons = [{
 urlButton: {
                                     displayText: tiny(`Git Link`),
                                     url: 'https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI'
-                                }
                             },{
                                 quickReplyButton: {
                                     displayText: tiny(`Speed Test`),
