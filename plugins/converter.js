@@ -31,7 +31,7 @@ let qcs = {
                       url: await x.profilePictureUrl(m.sender, "image").catch(() => 'https://telegra.ph/file/999b290ecb3e50107a9da.jpg'),
                      }
                      },
-                     text: text,
+                     text: teks,
                      replyMessage: {},
                      },
                    ],
@@ -74,12 +74,12 @@ x.sendMessage(m.chat, {
 	let [packname, author] = text.split(",")
     if (/image/.test(mime)) {
     let media = await quoted.download()
-	let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
+	let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname : packname || config.STICKER_DATA.split(",")[0], author : author || config.STICKER_DATA.split(",")[1]})
 	await fs.unlinkSync(encmedia)
                 } else if (/video/.test(mime)) {
                 if (!m.quoted) return m.reply('Maximum 10 seconds!')
                 let buff = await quoted.download()
-                let encmedia = await x.sendVideoAsSticker(m.chat, buff, m, { packname : packname || config.PACKNAME, author : author || config.AUTHOR })
+                let encmedia = await x.sendVideoAsSticker(m.chat, buff, m, { packname : packname || config.STICKER_DATA.split(",")[0], author : author || config.STICKER_DATA.split(",")[1]})
 	await fs.unlinkSync(encmedia)
 	}
 	}
