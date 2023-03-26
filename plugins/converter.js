@@ -51,7 +51,7 @@ x.sendMessage(m.chat, {
 			}, {
 				quoted: m
 			})*/
-
+}
 			break
            case `${p}`+'sticker': {
             if (!quoted) m.reply('_Reply to photo or video!_')
