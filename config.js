@@ -5,6 +5,7 @@ if (fs.existsSync("config.env"))
 
 const toBool = (x) => x == "true";
 
+global.owner = process.env.OWNER_NUMBER.split(",")
 DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
 module.exports = {
   VERSION: require('./package.json').version,
