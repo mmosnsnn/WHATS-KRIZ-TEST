@@ -42,10 +42,11 @@ break
 case `${p}`+'git': {
 let { data } = await axios.get(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
 let buttons = [{
-urlButton: {
+{urlButton: {
                                     displayText: tiny(`Git Link`),
                                     url: 'https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI'
-                            },{
+                            }
+},{
                                 quickReplyButton: {
                                     displayText: tiny(`Speed Test`),
                                     id: 'ping'
