@@ -8,6 +8,7 @@ module.exports = {
   BRANCH: "master",
   MENU_MEDIA: process.env.MENUMEDIA || " ",
   FOOTER: process.env.FOOTER || " ",
+  STICKER_DATA: process.env.STICKER_DATA || " ",
   PACKNAME: process.env.PACKNAME || "WHATS-KRIZ-AI",
   BCAUDIO_IMAGE: process.env.BCAUDIO_IMAGE || " ",
   OPENAI_API_KEY: process.env.OPENAI_API_KEY || " ",
