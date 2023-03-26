@@ -40,14 +40,14 @@ await m.reply(String(err))
 }
 break
 case `${p}`+'git': {
-let { repo } = await axios.get(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
+let { data } = await axios.get(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
 let buttons = [
 {buttonId: `ping`, buttonText: {displayText: tiny(`Ping`)}, type: 1},
 {buttonId: `menu`, buttonText: {displayText: tiny(`Menu`)}, type: 1}
 ]
 let buttonMessage = {
 image: { url: `https://i.imgur.com/5Si3Gl5.jpeg` },
-caption: `WhatsKrizAi\n\n⭐Stars : ${repo.stargazers_count} stars\n\n⛓️Forks : ${repo.forks_count} forks\n\n👁️‍🗨️Watchers : ${repo.watchers_count} watchers\n\n📑Language : ${repo.language}\n\n🌿Branch : ${repo.default_branch}\n\n💡Created At : ${repo.created_at}\n\n📈Last Update : ${repo.updated_at}\n\n👁️Visibility : private\n\n🔗Git Link : https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI`,
+caption: `WhatsKrizAi\n\n⭐Stars : ${data.stargazers_count}\n\n⛓️Forks : ${data.forks_count}\n\n👁️‍🗨️Watchers : ${data.watchers_count}\n\n📑Language : $data.language}\n\n🌿Branch : ${data.default_branch}\n\n💡Created At : ${data.created_at}\n\n📈Last Update : ${data.updated_at}\n\n👁️Visibility : private\n\n🔗Git Link : https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI`,
 footer: tiny(`whats-kriz-ai`),
 buttons: buttons,
 headerType: 4
