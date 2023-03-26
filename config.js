@@ -1,12 +1,7 @@
-const { Sequelize } = require("sequelize");
-const fs = require("fs");
-if (fs.existsSync("config.env"))
-  require("dotenv").config({ path: "./config.env" });
-
-const toBool = (x) => x == "true";
+const fs = require('fs-extra')
+if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/config.env' })
 
 global.owner = process.env.OWNER_NUMBER.split(",")
-DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
 module.exports = {
   VERSION: require('./package.json').version,
   SESSION_ID:process.env.SESSION_ID || " ",
@@ -19,24 +14,6 @@ module.exports = {
   MENTION_IMG: process.env.MENTION_IMG || " ",
   MENTION_MURL: process.env.MENTION_MURL || " ",
   MENTION_TITLE: process.env.MENTION_TITLE || " ",
-  DATABASE_URL: DATABASE_URL,
-  DATABASE:
-    DATABASE_URL === "./lib/database.db"
-      ? new Sequelize({
-          dialect: "sqlite",
-          storage: DATABASE_URL,
-          logging: false,
-        })
-      : new Sequelize(DATABASE_URL, {
-          dialect: "postgres",
-          ssl: true,
-          protocol: "postgres",
-          dialectOptions: {
-            native: true,
-            ssl: { require: true, rejectUnauthorized: false },
-          },
-          logging: false,
-        }),
   MENTION_BODY: process.env.MENTION_BODY || " ",
   MENTION_SURL: process.env.MENTION_SURL || " ",
   AUTHOR: process.env.AUTHOR || "TEAM-TOXIC",
@@ -45,3 +22,11 @@ module.exports = {
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
   HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
 };
+
+let file = require.resolve(__filename)
+fs.watchFile(file, () => {
+	fs.unwatchFile(file)
+	console.log(`Update'${__filename}'`)
+    delete require.cache[file]
+	require(file)
+})
