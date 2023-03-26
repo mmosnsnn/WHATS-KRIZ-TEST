@@ -40,7 +40,7 @@ await m.reply(String(err))
 }
 break
 case `${p}`+'git': {
-let repo = fetchJson(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
+let { repo } = await axios.get(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
 let buttons = [
 {buttonId: `ping`, buttonText: {displayText: tiny(`Ping`)}, type: 1},
 {buttonId: `menu`, buttonText: {displayText: tiny(`Menu`)}, type: 1}
