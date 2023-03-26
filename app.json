@@ -18,6 +18,11 @@
       "required": false,
       "value": "https://i.imgur.com/EZtwkeA.jpeg"
     },
+    "OWNER_NUMBER": {
+      "description": "Add owner number.",
+      "required": false,
+      "value": "919633687665,919496966726"
+    },
     "FOOTER": {
       "description": "Add your footer name here.",
       "required:" false,
