@@ -41,7 +41,7 @@ await m.reply(String(err))
 break
 case `${p}`+'git': {
 let { data } = await axios.get(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
-                anu = ``
+   let anu = ``
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -62,7 +62,8 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             }]
                         }
                     }
-                }), { userJid: m.chat })
+                }
+             }), { userJid: m.chat })
                 x.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
 break
