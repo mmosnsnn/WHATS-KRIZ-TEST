@@ -52,7 +52,6 @@ footer: tiny(`whats-kriz-ai`),
 buttons: buttons,
 headerType: 4
 }
-}
 x.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
