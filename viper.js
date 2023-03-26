@@ -101,7 +101,7 @@ const buttonMessage = {
 }
                 
 //autodl Instagram
-if (text.includes("https://www.instagram.com")) {
+if (!text.startsWith("https://www.instagram.com")) {
 	insta(text).then(({ url }) => {
  
    try { x.sendMessage(m.chat , { video : { url : url } } )
