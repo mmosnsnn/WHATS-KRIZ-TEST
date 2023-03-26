@@ -20,12 +20,12 @@ const _0x4c8f62=_0x5d06;(function(_0x4f6686,_0x39f71d){const _0x67e002=_0x5d06,_
             if (!quoted) m.reply('_Reply to photo or video!_')
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
-                let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname: config.PACKNAME, author: config.AUTHOR })
+                let encmedia = await x.sendImageAsSticker(m.chat, media, m, { packname: config.STICKER_DATA.split(",")[0], author: config.STICKER_DATA.split(",")[1] })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return m.reply('_Maximum 10 second video!_')
                 let media = await quoted.download()
-                let encmedia = await x.sendVideoAsSticker(m.chat, media, m, { packname: config.PACKNAME, author: config.AUTHOR })
+                let encmedia = await x.sendVideoAsSticker(m.chat, media, m, { packname: config.STICKER_DATA.split(",")[0], author: config.STICKER_DATA.split(",")[1]})
                 await fs.unlinkSync(encmedia)
             } else {
                 await m.reply('_Reply to photo or video!_')
