@@ -41,13 +41,26 @@ await m.reply(String(err))
 break
 case `${p}`+'git': {
 let { data } = await axios.get(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
-let buttons = [
-{buttonId: `ping`, buttonText: {displayText: tiny(`Ping`)}, type: 1},
-{buttonId: `menu`, buttonText: {displayText: tiny(`Menu`)}, type: 1}
-]
+let buttons = [{
+urlButton: {
+                                    displayText: tiny(`Git Link`),
+                                    url: 'https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI'
+                                }
+                            },{
+                                quickReplyButton: {
+                                    displayText: tiny(`Speed Test`),
+                                    id: 'ping'
+                                }  
+                            },{
+                                quickReplyButton: {
+                                    displayText: tiny(`Contact Owner`),
+                                    id: 'owner'
+                                }  
+                            }
+}]
 let buttonMessage = {
 image: { url: `https://i.imgur.com/5Si3Gl5.jpeg` },
-caption: tiny(`WhatsKrizAi\n\n⭐Stars : ${data.stargazers_count}\n\n⛓️Forks : ${data.forks_count}\n\n👁️‍🗨️Watchers : ${data.watchers_count}\n\n📑Language : ${data.language}\n\n🌿Branch : ${data.default_branch}\n\n💡Created At : ${data.created_at}\n\n📈Last Update : ${data.updated_at}\n\n👁️Visibility : private\n\n🔗Git Link : https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI`),
+caption: tiny(`WhatsKrizAi\n\n⭐Stars : ${data.stargazers_count}\n\n⛓️Forks : ${data.forks_count}\n\n👁️‍🗨️Watchers : ${data.watchers_count}\n\n📑Language : ${data.language}\n\n🌿Branch : ${data.default_branch}\n\n💡Created At : ${data.created_at}\n\n📈Last Update : ${data.updated_at}\n\n👁️Visibility : private\n\n`),
 footer: tiny(`whats-kriz-ai`),
 buttons: buttons,
 headerType: 4
