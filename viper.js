@@ -1,3 +1,4 @@
+const { generateWAMessageFromContent } = require('@adiwajshing/baileys')
 const path = require('path')
 const axios = require('axios')
 const { exec, spawn, execSync } = require('child_process')
