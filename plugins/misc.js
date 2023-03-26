@@ -41,14 +41,14 @@ await m.reply(String(err))
 break
 case `${p}`+'git': {
 let { data } = await axios.get(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
-   anu = ``
+let anu = tiny(`WhatsKrizAi\n\n⭐Stars : ${data.stargazers_count}\n\n⛓️Forks : ${data.forks_count}\n\n👁️‍🗨️Watchers : ${data.watchers_count}\n\n📑Language : ${data.language}\n\n🌿Branch : ${data.default_branch}\n\n💡Created At : ${data.created_at}\n\n📈Last Update : ${data.updated_at}\n\n👁️Visibility : private\n\n`)
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             liveLocationMessage: {
                             jpegThumbnail: fs.readFileSync('./lib/db/kriz.jpg'),
-                            hydratedFooterText: tiny(`WhatsKrizAi\n\n⭐Stars : ${data.stargazers_count}\n\n⛓️Forks : ${data.forks_count}\n\n👁️‍🗨️Watchers : ${data.watchers_count}\n\n📑Language : ${data.language}\n\n🌿Branch : ${data.default_branch}\n\n💡Created At : ${data.created_at}\n\n📈Last Update : ${data.updated_at}\n\n👁️Visibility : private\n\n`),
+                            hydratedFooterText: tiny(`whats-kriz-ai`),
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: tiny(`Git Link🔗`),
