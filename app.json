@@ -48,41 +48,6 @@
       "required": false,
       "value": "here"
     },
-    "MENTION_IMG": {
-      "description": "Add you want image to mention audio.",
-      "required": false,
-      "value": "https://i.imgur.com/EZtwkeA.jpeg"
-    },
-    "MENTION_BODY": {
-      "description": "Add you want body to mention audio.",
-      "required": false,
-      "value": "Life is very short enjoy every moment🙂!"
-    },
-    "MENTION_TITLE": {
-      "description": "Add you want title to mention audio.",
-      "required": false,
-      "value": "WHATS-KRIZ-AI"
-    },
-    "MENTION_SURL": {
-      "description": "Add you want source url to mention audio.",
-      "required": false,
-      "value": "https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI"
-    },
-    "MENTION_MURL": {
-      "description": "Add you want media url to mention audio.",
-      "required": false,
-      "value": "https://www.instagram.com"
-    },
-    "AUTHOR": {
-      "description": "Add sticker author name.",
-      "required": false,
-      "value": "TEAM-TOXIC"
-    },
-    "PACKNAME": {
-      "description": "Add sticker packname.",
-      "required": false,
-      "value": "WHATS-KRIZ-AI"
-    },
     "HEROKU_APP_NAME": {
             "description": "Heroku App name to manage the worker (you canot use restart if u dont fill thsi and HEROKU_API)",
             "required": true
