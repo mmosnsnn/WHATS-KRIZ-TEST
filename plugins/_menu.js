@@ -6,11 +6,29 @@
       
 
 
-let fek = tiny(`At : ${time}
+let fek = tiny(`
+At : ${time}
 
 User : ${pushname}
 
-${allmenu}
+╭╼━━━╾[Commands]╼━━━╾㊑
+╽╭╼━━━━MainMenu━━━╾⳻᷼⳺
+${mainmenu}
+┃╭╼━━━Downloader━━━╾⳻᷼⳺
+${downloader}
+┃╭╼━━━━Converter━━━╾⳻᷼⳺
+${converter}
+┃╭╼━━━━━Chatgpt━━━━╾⳻᷼⳺
+${chatgpt}
+┃╭╼━━━━━━Misc━━━━━╾⳻᷼⳺
+${misc}
+┃╭╼━━━━━BotStats━━━━╾⳻᷼⳺
+${botstats}
+┃╭╼━━━━━Whatsapp━━━━╾⳻᷼⳺
+${whatsapp}
+┃╭╼━━━━━Group━━━━╾⳻᷼⳺
+${group}
+╰╼━━╾[WHATS-KRIZ-AI]╼━━╾㊑
 `)
 let { result} = await getJson('https://gist.githubusercontent.com/Djjdkdm/ef1ccb7b34d73726773d0ccf1ab317b9/raw/2412fdfa8225e95b79f76fa4a97e70582b371320/menu.json')
 let kriz = result[Math.floor(Math.random()*result.length)]
