@@ -39,7 +39,7 @@ await m.reply(String(err))
 }
 }
 break
-case `${p}|+'git': {
+case `${p}`+'git': {
 let repo = fetchJson(`https://api.github.com/repos/Djjdkdm/WHATS-KRIZ-TEST`)
 let repomsg = tiny(`
 WhatsKrizAi
