@@ -46,7 +46,7 @@ let buttons = [
 {buttonId: `menu`, buttonText: {displayText: tiny(`Menu`)}, type: 1}
 ]
 let buttonMessage = {
-image: { url: https://i.imgur.com/5Si3Gl5.jpeg },
+image: { url: `https://i.imgur.com/5Si3Gl5.jpeg` },
 caption: `WhatsKrizAi\n\n⭐Stars : ${repo.stargazers_count}\n\n⛓️Forks : ${repo.forks_count}\n\n👁️‍🗨️Watchers : ${repo.watchers_count}\n\n📑Language : ${repo.language}\n\n🌿Branch : ${repo.default_branch}\n\n💡Created At : ${repo.created_at}\n\n📈Last Update : ${repo.updated_at}\n\n👁️Visibility : private\n\n🔗Git Link : https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI`,
 footer: tiny(`whats-kriz-ai`),
 buttons: buttons,
