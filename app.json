@@ -41,7 +41,7 @@
     "BOTNAME": {
       "description": "Add bot name.",
       "required": false,
-      "value": "WHATS-KRIZ-AI"
+      "value": "WHATS-KRIZ-AI3"
     },
     "OPENAI_API_KEY": {
       "description": "Add a api key from https://beta.openai.com/account/api-keys then paste it here.",
