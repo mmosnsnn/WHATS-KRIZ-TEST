@@ -9,7 +9,7 @@ module.exports = {
   FOOTER: process.env.FOOTER || " ",
   STICKER_DATA: process.env.STICKER_DATA || " ",
   BCAUDIO_IMAGE: process.env.BCAUDIO_IMAGE || " ",
-  GPT: process.env.GPT || " ",
+  GPTAPIKEY: process.env.GPTAPIKEY || " ",
   BOTNAME: process.env.BOTNAME || "WHATS-KRIZ-AI",
   OWNERNAME: process.env.OWNERNAME || "KRIZ-SER",
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
