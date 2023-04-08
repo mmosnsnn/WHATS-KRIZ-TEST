@@ -4,7 +4,9 @@
   "description": "A simple whatsapp bot - from viper-x0 api key this WhatsApp userbot improvs your WhatsApp using experience.",
   "main": "./index.js",
   "scripts": {
-        "start": "pm2 start . --attach --name whats-kriz-ai"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "pm2 start . --attach --namespace whats-kriz-ai --name whats-kriz-ai --time",
+        "stop": "pm2 stop whats-kriz-ai"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,7 @@
   },
   "homepage": "https://github.com/mmosnsnn/WHATS-KRIZ-TEST#readme",
   "dependencies": {
-    "@adiwajshing/baileys": "^5.0.0",
+    "@adiwajshing/baileys": "github:BrunoSobrino/baileys",
     "@adiwajshing/keyed-db": "latest",
     "@bochilteam/scraper": "latest",
     "@hapi/boom": "^10.0.1",

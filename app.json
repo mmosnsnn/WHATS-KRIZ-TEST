@@ -1,8 +1,6 @@
 {
   "name": "WHATS-KRIZ-AI",
   "description": "whatsapp md chatgpt made by kriz ser",
-  "repository": "https://github.com/Djjdkdm/WHATS-KRIZ-TEST",
-  "logo": "https://i.imgur.com/hJ4kT26.jpeg",
   "keywords": ["nodejs", "bot", "whatsapp chatgpt", "whatsapp automation", "multi device"],
   "stack": "container",
 	"env": { 
@@ -20,6 +18,16 @@
       "required": false,
       "value": "https://i.imgur.com/EZtwkeA.jpeg"
     },
+    "STICKER_DATA": {
+      "description": "Add sticker data.",
+      "required": false,
+      "value": "WHATS-KRIZ-AI,TEAM-TOXIC"
+    },
+    "OWNER_NUMBER": {
+      "description": "Add owner number.",
+      "required": false,
+      "value": "919633687665,919496966726"
+    },
     "FOOTER": {
       "description": "Add your footer name here.",
       "required:" false,
@@ -33,47 +41,12 @@
     "BOTNAME": {
       "description": "Add bot name.",
       "required": false,
-      "value": "WHATS-KRIZ-AI"
+      "value": "WHATS-KRIZ-AI3"
     },
     "OPENAI_API_KEY": {
       "description": "Add a api key from https://beta.openai.com/account/api-keys then paste it here.",
       "required": false,
       "value": "here"
-    },
-    "MENTION_IMG": {
-      "description": "Add you want image to mention audio.",
-      "required": false,
-      "value": "https://i.imgur.com/EZtwkeA.jpeg"
-    },
-    "MENTION_BODY": {
-      "description": "Add you want body to mention audio.",
-      "required": false,
-      "value": "Life is very short enjoy every moment🙂!"
-    },
-    "MENTION_TITLE": {
-      "description": "Add you want title to mention audio.",
-      "required": false,
-      "value": "WHATS-KRIZ-AI"
-    },
-    "MENTION_SURL": {
-      "description": "Add you want source url to mention audio.",
-      "required": false,
-      "value": "https://github.com/TOXIC-KICHUX/WHATS-KRIZ-AI"
-    },
-    "MENTION_MURL": {
-      "description": "Add you want media url to mention audio.",
-      "required": false,
-      "value": "https://www.instagram.com"
-    },
-    "AUTHOR": {
-      "description": "Add sticker author name.",
-      "required": false,
-      "value": "TEAM-TOXIC"
-    },
-    "PACKNAME": {
-      "description": "Add sticker packname.",
-      "required": false,
-      "value": "WHATS-KRIZ-AI"
     },
     "HEROKU_APP_NAME": {
             "description": "Heroku App name to manage the worker (you canot use restart if u dont fill thsi and HEROKU_API)",
@@ -84,20 +57,12 @@
             "required": true
         }
 },
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
-    }
-  ],
    "addons": [
 		{
-			"plan": "heroku-postgresql"
+			"plan": "heroku-postgresql:basic"
 		}
-	]
+	],
+	"formation": {
+		"worker": { "quantity": 1, "size": "standard-2x" }
+	}
 }

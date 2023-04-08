@@ -2,10 +2,10 @@
  
   try{
 	switch (command) {
-	case `${p}`+'ai': {
-	if (!text) await m.reply(`_Example : .ai who is what's kriz?_`)
-    var api = await fetchJson(`https://mfarels.my.id/api/openai?text=${text}`)
-    x.sendMessage(m.chat, { text: api.result }, {quoted: m })
+	case "ai";{	
+	if (!teks) await m.reply(`_Example : .ai who is what's kriz?_`)
+    let response = await fetchJson(`https://api-viper-x0.vercel.app/api/openai?openaiapikey=${gptapikey}&text=${teks}`)
+    x.sendMessage(m.chat, { text: response.data.text }, {quoted: m })
 }
 break
 }

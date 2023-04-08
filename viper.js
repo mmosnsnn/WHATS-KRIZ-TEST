@@ -1,3 +1,4 @@
+const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const path = require('path')
 const axios = require('axios')
 const { exec, spawn, execSync } = require('child_process')
@@ -5,20 +6,20 @@ const config = require('./config.js')
 const fs = require('fs')
 const util = require('util')
 const chalk = require('chalk')
-const { jslbuffer } = require('abu-bot')
+const { STICKER_DATA } = require('./config.js')
 const googleTTS = require('google-tts-api')
 const { tiny } = require('./lib/db/fancy.js')
-const { PluginDB, installPlugin } = require('./plugins/sql/plugin.js')
+const { allmenu, group, whatsapp, botstats, misc, chatgpt, converter, downloader, mainmenu } = require('./lib/_menu.js')
 const moment = require('moment-timezone')
 const prefa = ['','!','.','#','&','/',',','!','?']
 global.prefix = ['','!','.','#','&','/',',','!','?']
-global.owner = ['919207759062','919961857267','919633687665','919496966726']
 const { insta } = require('./lib/scrapers.js')
 const { ytMp4, ytMp3, ytPlay } = require('./lib/ytdl.js')
 const { toAudio } = require('./lib/converter.js')
 const yts = require('yt-search')
-const { parsedJid, parseMention, fetchJson, getJson, sleep, fetchBuffer, getRandom, getBuffer } = require('./lib/myfunc.js')
-const owner = global.owner
+const gptapikey = config.OPENAI_API_KEY
+const { parsedJid, parseMention, fetchJson, isUrl, getJson, sleep, fetchBuffer, getRandom, getBuffer } = require('./lib/myfunc.js')
+const owner = config.OWNER_NUMBER
 
 module.exports = viper = async (x, m, chatUpdate) => {
 try {
@@ -98,43 +99,9 @@ const buttonMessage = {
  x.sendMessage(m.chat, buttonMessage)
 
 }
-
-//Mention
-try {
-var audios = ["https://i.imgur.com/NTSnK6q.mp4" ,"https://i.imgur.com/GRlWXJh.mp4"]
-var logo = 'https://i.imgur.com/LgwJjMF.jpeg'
-for (any in owner)
-if (text.includes(owner[any])) {
-const audio = audios[Math.floor(Math.random() * audios.length)]
-const Audio = await getBuffer(audio)
-let image1 = await getBuffer(logo)
-let image2 = await getBuffer(logo)
-var res = await toAudio(Audio, 'mp4')
-x.sendMessage(m.chat, {
-audio: res,
-mimetype: 'audio/mpeg',
-ptt: true,
-waveform: [99,50,99,50,99],
-contextInfo: {
-				externalAdReply: {
-				title: 'WʜᴀᴛꜱKʀɪᴢ Aɪ',
-				body: 'ᴛᴏxɪᴄ-ᴋɪᴄʜᴜx🥶!!',
-				mediaType: 2,
-				thumbnail: image2,
-				mediaUrl: 'https://www.instagram.com/t.o.x.i.c_k.i.c.h.u',
-				sourceUrl: 'https://www.instagram.com/t.o.x.i.c_k.i.c.h.u',
-				showAdAttribution: true
-                }}
-                },
-                { quoted: m})
-                }
-	
-		    } catch (e) {
-			    x.sendMessage(m.chat , { text : "(☞ ͡° ͜ʖ ͡°)☞     " + e } )
-			    }
                 
 //autodl Instagram
-if (text.includes("https://www.instagram.com")) {
+if (!text.startsWith("https://www.instagram.com")) {
 	insta(text).then(({ url }) => {
  
    try { x.sendMessage(m.chat , { video : { url : url } } )

@@ -176,21 +176,119 @@ case `${p}`+'yts': {
   }
             break
 case `${p}`+'ytmp3doc': {
-await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
+if (!text) await m.reply(`_Send youtube video link!_`)
+let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+if (!isLinks2) return m.reply(`_Invalid link!_`)
+anu = await ytMp4(`${q}`)
+m.reply(`_${anu.title} song is downloading...!_`)
+x.sendMessage(m.chat, { document: { url: anu.result }, fileName: anu.title, mimetype: 'audio/mpeg',
+    contextInfo:{
+        externalAdReply:{
+            title: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
+            body: pushname,
+            thumbnail: await fetchBuffer(anu.thumb),
+            mediaType:2,
+            mediaUrl: text,
+            sourceUrl: text,
+            showAdAttribution: true
+        }
+
+    },
+},{quoted:m})
 }
 break
 case `${p}`+'ytmp4doc': {
-await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
+if (!text) await m.reply(`_Send youtube video link!_`)
+let isLinks= args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+if (!isLinks) return m.reply(`_Invalid link!_`)
+anu = await ytMp4(`${q}`)
+m.reply(`_${anu.title} video is downloading..._`)
+x.sendMessage(m.chat, { document: { url: anu.result }, fileName: anu.title, mimetype: 'video/mp4',
+    contextInfo:{
+        externalAdReply:{
+            title: 'ᴡʜᴀᴛꜱ-ᴋʀɪᴢ-ᴀɪ',
+            body: pushname,
+            thumbnail: await fetchBuffer(anu.thumb),
+            mediaType:2,
+            mediaUrl: text,
+            sourceUrl: text,
+            showAdAttribution: true
+        }
+
+    },
+},{quoted:m})
 }
 break
 case `${p}`+'ytvs': {
-await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
-}
-break
+      if (!args[0])
+      return x.sendMessage(
+        m.chat,
+        { text: `_Please provide a name!_` },
+        { quoted: m }
+      );
+    let search = await yts(text);
+    let num = 1;
+    let sections = [];
+    for (let i of search.all) {
+      const list = {
+        title: tiny(`Result: ${num++}`),
+        rows: [
+          {
+            title: tiny(`${i.title}`),
+            rowId: `ytmp4 ${i.url}`,
+            description: `Dᴜʀᴀᴛɪᴏɴ: ${i.timestamp}`,
+          },
+        ],
+      };
+      sections.push(list);
+    }
+    var txt = tiny(`${i.title}\n\n Total Results : ${search.all.length}\n`);
+
+    let buttonMessage = {
+      text: txt,
+      footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
+      buttonText: "Sᴇʟᴇᴄᴛ",
+      sections,
+    };
+
+  x.sendMessage(m.chat, buttonMessage, { quoted: m });
+  }
+            break
 case `${p}`+'ytas': {
-await m.reply(`_Sorry currently this feature is not work._\n_Don't worry it will be coming soon._`)
-}
-break
+      if (!args[0])
+      return x.sendMessage(
+        m.chat,
+        { text: `_Please provide a name!_` },
+        { quoted: m }
+      );
+    let search = await yts(text);
+    let num = 1;
+    let sections = [];
+    for (let i of search.all) {
+      const list = {
+        title: tiny(`Result: ${num++}`),
+        rows: [
+          {
+            title: tiny(`${i.title}`),
+            rowId: `ytmp3 ${i.url}`,
+            description: `Dᴜʀᴀᴛɪᴏɴ: ${i.timestamp}`,
+          },
+        ],
+      };
+      sections.push(list);
+    }
+    var txt = tiny(`${i.title}\n\n Total Results : ${search.all.length}\n`);
+
+    let buttonMessage = {
+      text: txt,
+      footer: `WʜᴀᴛꜱKʀɪᴢ Aɪ`,
+      buttonText: "Sᴇʟᴇᴄᴛ",
+      sections,
+    };
+
+  x.sendMessage(m.chat, buttonMessage, { quoted: m });
+  }
+            break
 }
     } catch (e) {
       console.log(e)
